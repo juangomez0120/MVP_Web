@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Sprint3</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <!-- NavBar -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper white">
+                    <a href="#" class="brand-logo center red-text">El Gran Escape</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="@Url.Page("../Menu")" class="red-text">Menú</a></li>
+                        <li><a href="@Url.Page("../EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
+                        <li><a href="@Url.Page("../Perfil")" class="btn btn-floating red white-text">FD</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Primera página que ve el usuario cuando se mete es la del leaderboard -->
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+           
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
