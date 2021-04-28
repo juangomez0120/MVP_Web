@@ -1,10 +1,36 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Log-In";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="navbar">
+    <h1>NavBar</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
+            <h2 class="texto center-align">El Gran Escape</h2>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <i class="material-icons prefix">email</i>
+                    <input type="text" id="autocomplete-input1" class="validate">
+                    <label for="autocomplete-input1">Correo Electrónico</label>
+                </div>
+            </div>
+            <div id="passwordrow" class="row">
+                <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
+                    <i class="material-icons prefix">lock</i>
+                    <input type="password" id="autocomplete-input2" class="validate">
+                    <label for="autocomplete-input2">Contraseña</label>
+                </div>
+            </div>
+            <div class="row">
+                <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
+            </div>
+            <div class="row">
+                <button id="boton1" class="btn col s4 offset-s4" type="submit" name="action">Submit</button>
+            </div>
+        </div>
+    </div>
 </div>
