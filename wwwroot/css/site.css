@@ -9,14 +9,19 @@
     margin-top: 32px;
 }
 
-.sizeButton{
-    height: 32px;
-    width: 88px;
+.logo {
+    width: 102px;
+    height: 100%;
+    padding-top:16px;
+    padding-bottom:16px;
+    display: inline-block;
+    margin-left:16px
 }
 
-/* Container Margins */
-.container{
-    margin-top: 5%;
+
+.sizeButton {
+    height: 32px;
+    width: 88px;
 }
 
 /* Table Sizing */
@@ -50,19 +55,33 @@ tr td:last-child {
     width: 32px;
 }
 
-/* Login Content*/
-.contenido { /* Div que contiene todo el login*/
+/* Fotos de Chatarra en Indicadores */
+.chatarraIndicadores {
+    height: 400px;
+    width: 300px;
+}
+
+.contenidoIndicadores {
+    background-color: rgb(102, 102, 102, 0.7);
+    border-radius: 25px;
+    height: 600px;
+    width:100%;
+    margin-right: 102px;
+}
+
+
+
+.contenido {
     margin-top: 8%;
     background-color: rgb(102, 102, 102, 0.7);
     border-radius: 25px;
 }
 
-.texto  /* Titulo del Login */{
+.texto {
     color: white;
     margin-bottom: 10%;
 }
 
-/* Input Modificators */
 input {
     color: white;
 }
@@ -105,8 +124,8 @@ input[type=password]:not(.browser-default) {
     color: white;
 }
 
-/* Password margin modificators */
 #passwordcoli {
+    color: white;
     margin-bottom: 0px;
 }
 
@@ -114,39 +133,21 @@ input[type=password]:not(.browser-default) {
     margin-bottom: 0px;
 }
 
-/* Texto Olvide Mi Contraseña */
 .olvidastecontrasena {
     color: white;
     margin-bottom: 10%;
 }
 
-.botonmenu {
-    height: 200px;
-    border-radius: 25px;
+#boton1 {
     margin-bottom: 40px;
     background-color: rgb(255, 51, 0);
     color: white;
 }
 
-.botonmenu:hover {
-    border: 3px solid rgb(255, 51, 0);
-    background-color: rgb(102, 102, 102, 0.8);
-}
-
-.textobtn {
-    padding: 70px 0;
-    margin-bottom: 8%;
-    margin-top: 4%;
-}
-
-#botonlogin {
-    margin-bottom: 40px;
-    background-color: rgb(255, 51, 0);
-    color: white;
-}
-
-#botonlogin:hover {
+#boton1:hover {
     background-color: rgb(255, 51, 0, 0);
     border: 1px solid rgb(255, 51, 0);
     color: white;
 }
+
+    

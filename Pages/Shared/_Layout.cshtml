@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Sprint3</title>
+    <title>@ViewData["Title"] - MVP_Web</title>
+
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -17,7 +18,8 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper white">
-                    <a href="#" class="brand-logo center red-text">El Gran Escape</a>
+                    <img src="img/logoTernium.png" class="logo" />
+                    <a href="@Url.Page("/Index")" class="center brand-logo red-text">El Gran Escape</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="@Url.Page("/menu")" class="red-text">Menú</a></li>
                         <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
