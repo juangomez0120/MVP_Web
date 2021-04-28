@@ -1,20 +1,54 @@
 ﻿body {
-    background-image: url(background.png);
+    background:url("../img/background.png");
+
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
 
-.navbar {
-    background-color: rgb(102, 102, 102);
+.top{
+    margin-top: 32px;
 }
 
-.navbar h1 {
-    margin: 0px;
-    color: white;
+.sizeButton{
+    height: 32px;
+    width: 88px;
+}
+
+/* Table Sizing */
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+tr td {
+    margin-bottom: 8px;
+    border-bottom: 2px solid white;
+}
+
+tr td:first-child {
+    width: 50px;
+    margin-bottom: 8px;
+}
+
+tr td:nth-child(2) {
+    width: 400px;
+}
+
+tr td:last-child {
+    width: 100px;
+}
+
+/* Medalla Sizing */
+.imagenMedalla {
+    height: 32px;
+    width: 32px;
 }
 
 
 .contenido {
     margin-top: 8%;
-    background-color: rgb(102, 102, 102);
+    background-color: rgb(102, 102, 102, 0.7);
     border-radius: 25px;
 }
 
@@ -86,7 +120,7 @@ input[type=password]:not(.browser-default) {
 }
 
     #boton1:hover {
-        background-color: rgb(255, 51, 0);
+        background-color: rgb(255, 51, 0, 0);
         border: 1px solid rgb(255, 51, 0);
         color: white;
     }
