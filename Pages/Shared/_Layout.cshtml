@@ -11,7 +11,19 @@
 </head>
 <body>
     <header>
-        
+        <!-- NavBar -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper white">
+                    <a href="#" class="brand-logo center red-text">El Gran Escape</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="@Url.Page("../Menu")" class="red-text">Menú</a></li>
+                        <li><a href="@Url.Page("../EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
+                        <li><a href="@Url.Page("../Perfil")" class="btn btn-floating red white-text">FD</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
     <div>
         <main role="main" class="pb-3">
@@ -20,9 +32,6 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - MVP_Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
