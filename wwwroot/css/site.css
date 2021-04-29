@@ -176,8 +176,10 @@ input[type=password]:not(.browser-default) {
 }
 
 /* Dropdown */
-.dropdownTop{
+.dropdownTop {
     margin-top: 64px;
+}
+
 .tituloPerfil {
     background-color: rgb(102, 102, 102, 0.8);
     color: white;
