@@ -13,6 +13,18 @@
 </head>
 <body>
     <header>
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="@Url.Page("/Perfil")" class="red-text">Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="#!" class="red-text">Terminar Sesión</a></li>
+        </ul>
+        <script>
+            $(document).ready(function () {
+                $('.dropdown-trigger').dropdown();
+            });
+        </script>
+
         <!-- NavBar -->
         <div class="navbar-fixed">
             <nav>
@@ -22,7 +34,8 @@
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="@Url.Page("/menu")" class="red-text">Menú</a></li>
                         <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
-                        <li><a href="@Url.Page("/Perfil")" class="btn btn-floating red white-text">FD</a></li>
+                        <!-- Dropdown Trigger -->
+                        <li><a href="" class="btn btn-floating red white-text dropdown-trigger" data-target="dropdown1">FD</a></li>
                     </ul>
                 </div>
             </nav>
@@ -38,13 +51,14 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-           
+
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>

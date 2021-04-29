@@ -144,9 +144,10 @@ input[type=password]:not(.browser-default) {
 }
 
 .botonmenu {
+    margin-top:64px;
     height: 200px;
+    margin-bottom:40px;
     border-radius: 25px;
-    margin-bottom: 40px;
     background-color: rgb(255, 51, 0);
     color: white;
 }
@@ -172,4 +173,9 @@ input[type=password]:not(.browser-default) {
     background-color: rgb(255, 51, 0, 0);
     border: 1px solid rgb(255, 51, 0);
     color: white;
+}
+
+/* Dropdown */
+.dropdownTop{
+    margin-top: 64px;
 }
