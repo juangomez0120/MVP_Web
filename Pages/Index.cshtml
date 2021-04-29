@@ -6,26 +6,28 @@
 
 <div class="container">
     <div class="row">
-        <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
-            <h2 class="texto center-align">El Gran Escape</h2>
-            <div class="row">
-                <div class="input-field col s6 offset-s3">
-                    <i class="material-icons prefix">email</i>
-                    <input placeholder="Correo Electrónico" type="text" id="autocomplete-input1" class="validate">
+        <form method="post">
+            <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
+                <h2 class="texto center-align">El Gran Escape</h2>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <i class="material-icons prefix">email</i>
+                        <input placeholder="Correo Electrónico" type="text" id="autocomplete-input1" class="validate" asp-for="correoUsuario">
+                    </div>
+                </div>
+                <div id="passwordrow" class="row">
+                    <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
+                        <i class="material-icons prefix">lock</i>
+                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
+                </div>
+                <div class="row">
+                    <button id="botonlogin" class="btn col s4 offset-s4" type="submit" name="action">Submit</button>
                 </div>
             </div>
-            <div id="passwordrow" class="row">
-                <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
-                    <i class="material-icons prefix">lock</i>
-                    <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate">
-                </div>
-            </div>
-            <div class="row">
-                <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
-            </div>
-            <div class="row">
-                <button id="botonlogin" class="btn col s4 offset-s4" type="submit" name="action">Submit</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
