@@ -178,4 +178,14 @@ input[type=password]:not(.browser-default) {
 /* Dropdown */
 .dropdownTop{
     margin-top: 64px;
+.tituloPerfil {
+    background-color: rgb(102, 102, 102, 0.8);
+    color: white;
+}
+
+.tablaPerfil {
+    background-color: rgb(102, 102, 102);
+    color: white;
+    text-align: center;
+    margin-top: 60px;
 }
