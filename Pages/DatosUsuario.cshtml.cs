@@ -15,6 +15,10 @@ namespace MVP_Web.Pages
         [BindProperty]
         public string ApellidoUsuario { get; set; }
 
+        //Agarrar primera letra de NombreUsuario y ApellidoUsuario y mandarlas a pagina de Layout
+
+        //Mandar NombreUsuario y ApellidoUsuario a página de perfil
+
         private static string PrimeraLetraMayuscula(string str) { // REVISAR (nombres/apellidos con más de 1 palabra)
             return char.ToUpper(str[0]) + str[1..];
         }
