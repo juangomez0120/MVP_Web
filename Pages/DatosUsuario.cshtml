@@ -1,0 +1,30 @@
+﻿@page
+@model MVP_Web.Pages.DatosUsuarioModel
+@{
+    ViewData["Title"] = "Datos";
+}
+
+<div class="container">
+    <div class="row">
+        <form method="post">
+            <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
+                <h2 class="texto center-align">Datos de Perfil</h2>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <i class="material-icons prefix">account_box</i>
+                        <input placeholder="Nombre" type="text" id="autocomplete-input3" class="validate" asp-for="NombreUsuario">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <i class="material-icons prefix">account_box</i>
+                        <input placeholder="Apellido" type="text" id="autocomplete-input4" class="validate" asp-for="ApellidoUsuario">
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" id="botonDatosUsuario" class="btn col s4 offset-s4" value="Iniciar Sesión">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

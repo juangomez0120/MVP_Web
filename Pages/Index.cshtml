@@ -4,28 +4,30 @@
     ViewData["Title"] = "Log-In";
 }
 
-<div class="container">
+<<div class="container">
     <div class="row">
-        <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
-            <h2 class="texto center-align">El Gran Escape</h2>
-            <div class="row">
-                <div class="input-field col s6 offset-s3">
-                    <i class="material-icons prefix">account_circle</i>
-                    <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate">
+        <form method="post">
+            <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
+                <h2 class="texto center-align">El Gran Escape</h2>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <i class="material-icons prefix">email</i>
+                        <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="UsernameUsuario">
+                    </div>
+                </div>
+                <div id="passwordrow" class="row">
+                    <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
+                        <i class="material-icons prefix">lock</i>
+                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate">
+                    </div>
+                </div>
+                <div class="row">
+                    <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
+                </div>
+                <div class="row">
+                    <input type="submit" id="botonlogin" class="btn col s4 offset-s4" value="Iniciar Sesión">
                 </div>
             </div>
-            <div id="passwordrow" class="row">
-                <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
-                    <i class="material-icons prefix">lock</i>
-                    <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate">
-                </div>
-            </div>
-            <div class="row">
-                <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
-            </div>
-            <div class="row">
-                <a href="/menu" id="botonlogin" class="btn col s4 offset-s4">Iniciar Sesión</a>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
