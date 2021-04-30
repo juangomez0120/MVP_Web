@@ -175,6 +175,18 @@ input[type=password]:not(.browser-default) {
     color: white;
 }
 
+#botonDatosUsuario {
+    margin-bottom: 40px;
+    background-color: rgb(255, 51, 0);
+    color: white;
+}
+
+    #botonDatosUsuario:hover {
+        background-color: rgb(255, 51, 0, 0);
+        border: 1px solid rgb(255, 51, 0);
+        color: white;
+    }
+
 /* Dropdown */
 .dropdownTop {
     margin-top: 64px;
