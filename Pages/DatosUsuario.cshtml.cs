@@ -35,7 +35,7 @@ namespace MVP_Web.Pages
 
             var cmd = new MySqlCommand(query1, conexion);
 
-            cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = "cristobale2000"; // CAMBIAR!!!!!!!
+            cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = "Usuario1"; // CAMBIAR!!!!!!!
             cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(NombreUsuario);
             cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(ApellidoUsuario);
             cmd.ExecuteNonQuery();
