@@ -11,16 +11,17 @@
                 <h2 class="texto center-align">El Gran Escape</h2>
                 <div class="row">
                     <div class="input-field col s6 offset-s3">
-                        <i class="material-icons prefix">email</i>
-                        <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="UsernameUsuario">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="Usuario.username">
                     </div>
                 </div>
                 <div id="passwordrow" class="row">
                     <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
                         <i class="material-icons prefix">lock</i>
-                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate">
+                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="Usuario.password">
                     </div>
                 </div>
+                    <p class="credencialesinvalidas">Credenciales Inválidas</p>
                 <div class="row">
                     <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
                 </div>
