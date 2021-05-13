@@ -18,10 +18,10 @@
                 <div id="passwordrow" class="row">
                     <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
                         <i class="material-icons prefix">lock</i>
-                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="Usuario.password">
+                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="Password">
                     </div>
                 </div>
-                    <p class="credencialesinvalidas">Credenciales Inválidas</p>
+                    <p class="credencialesinvalidas">@Model.MensajeError</p>
                 <div class="row">
                     <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
                 </div>
