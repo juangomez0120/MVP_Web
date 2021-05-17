@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
+using MVP_Web.Model;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace MVP_Web.Pages
 {
@@ -23,9 +26,24 @@ namespace MVP_Web.Pages
             return char.ToUpper(str[0]) + str[1..];
         }
 
+        public void OnGet()
+        {
+
+        }
 
         public IActionResult OnPost()
         {
+            Login Usuario = new Login();
+            string value = HttpContext.Session.GetString("SessionUsuario");
+
+            if (value != null)
+            {
+                Usuario = JsonConvert.DeserializeObject<Login>(value);
+            }
+
+            Usuario.nombre = NombreUsuario;
+            Usuario.apellido = ApellidoUsuario;
+
             string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
             MySqlConnection conexion = new MySqlConnection(connectionString);
             conexion.Open();
@@ -35,21 +53,18 @@ namespace MVP_Web.Pages
 
             var cmd = new MySqlCommand(query1, conexion);
 
-            cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = "Usuario1"; // CAMBIAR (Utilizar variable de sesión)!!!!!!!
-            cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(NombreUsuario);
-            cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(ApellidoUsuario);
+            cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = Usuario.username;
+            cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(Usuario.nombre);
+            cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(Usuario.apellido);
             cmd.ExecuteNonQuery();
 
             cmd.CommandText = query2;
             cmd.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = DateTime.Now;
             cmd.ExecuteNonQuery();
 
-            return RedirectToPage("menu");
-        }
-       
+            HttpContext.Session.SetString("SessionUsuario", JsonConvert.SerializeObject(Usuario));
 
-        public void OnGet()
-        {
+            return RedirectToPage("menu");
         }
     }
 }

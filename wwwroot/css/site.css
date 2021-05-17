@@ -208,3 +208,17 @@ input[type=password]:not(.browser-default) {
     text-align: center;
     margin-top: 60px;
 }
+
+.ranking {
+    background-color: rgb(102, 102, 102);
+}
+
+.botonesranking btn {
+    background-color: rgb(255, 51, 0);
+}
+
+.botonesranking btn:hover {
+    background-color: rgb(255, 51, 0, 0);
+    border: 1px solid rgb(255, 51, 0);
+    color: white;
+}
