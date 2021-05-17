@@ -11,6 +11,16 @@ namespace Sprint3.Pages
     {
         public void OnGet()
         {
+<<<<<<< Updated upstream
+=======
+            Usuario = new Login();
+            string value = HttpContext.Session.GetString("SessionUsuario");
+
+            if (value != null)
+            {
+                Usuario = JsonConvert.DeserializeObject<Login>(value);
+            }
+>>>>>>> Stashed changes
         }
     }
 }
