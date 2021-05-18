@@ -20,6 +20,7 @@ namespace MVP_Web.Pages
     {
         [BindProperty]
         public Login Usuario { get; set; }
+
         [BindProperty]
         public string Password { get; set; }
         public string MensajeError { get; set; }

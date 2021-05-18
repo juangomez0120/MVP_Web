@@ -13,33 +13,51 @@
 </head>
 <body>
     <header>
-        <!-- Dropdown Structure -->
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="@Url.Page("/Perfil")" class="red-text">Perfil</a></li>
-            <li class="divider"></li>
-            <li><a href="@Url.Page("/Index")" class="red-text">Terminar Sesión</a></li>
-        </ul>
-        <script>
-            $(document).ready(function () {
-                $('.dropdown-trigger').dropdown();
-            });
-        </script>
+        <!-- Variable de Sesión -->
+        @{
 
-        <!-- NavBar -->
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper white">
-                    <img src="img/logoTernium.png" class="logo" />
-                    <a href="@Url.Page("/Index")" class="center brand-logo red-text">El Gran Escape</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="@Url.Page("/menu")" class="red-text">Menú</a></li>
-                        <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
-                        <!-- Dropdown Trigger -->
-                        <li><a href="" class="btn btn-floating red white-text dropdown-trigger" data-target="dropdown1">FD</a></li>
+            var value = new Byte[20];
+            bool nameOK = Context.Session.TryGetValue("SessionUsuario", out value);
+
+            if (nameOK)
+            {
+                string result = System.Text.Encoding.UTF8.GetString(value);
+                if (result != null)
+                {
+                    <!-- Dropdown Structure -->
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="@Url.Page("/Perfil")" class="red-text">Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a href="@Url.Page("/Index")" class="red-text">Terminar Sesión</a></li>
                     </ul>
-                </div>
-            </nav>
-        </div>
+                    <script>$(document).ready(function () {
+                            $('.dropdown-trigger').dropdown();
+                        });</script>
+
+                    <!-- NavBar -->
+                    <div class="navbar-fixed">
+                        <nav>
+                            <div class="nav-wrapper white">
+                                <img src="img/logoTernium.png" class="logo" />
+                                <a href="@Url.Page("/Index")" class="center brand-logo red-text">El Gran Escape</a>
+                                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                                    <li><a href="@Url.Page("/menu")" class="red-text">Menú</a></li>
+                                    <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
+                                    <!-- Dropdown Trigger -->
+                                    <li><a href="" class="btn btn-floating red dropdown-trigger" data-target="dropdown1"><i class="dropdown-trigger red material-icons">person</i></a></li>
+                                    <!--
+                                <li><a href="" class="btn btn-floating red white-text dropdown-trigger" data-target="dropdown1"></a></li>
+                                 -->
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+
+                }
+            }
+        }
+
+
     </header>
 
     <!-- Primera página que ve el usuario cuando se mete es la del leaderboard -->
