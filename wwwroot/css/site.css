@@ -213,12 +213,12 @@ input[type=password]:not(.browser-default) {
     background-color: rgb(102, 102, 102);
 }
 
-.botonesranking btn {
+#botonesLeaderboard {
     background-color: rgb(255, 51, 0);
 }
 
-.botonesranking btn:hover {
-    background-color: rgb(255, 51, 0, 0);
-    border: 1px solid rgb(255, 51, 0);
-    color: white;
-}
+    #botonesLeaderboard:hover {
+        background-color: rgb(255, 51, 0, 0);
+        border: 1px solid rgb(255, 51, 0);
+        color: white;
+    }
