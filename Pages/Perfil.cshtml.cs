@@ -16,6 +16,8 @@ namespace Sprint3.Pages
 
         public void OnGet()
         {
+            Usuario = new Login();
+
             string value = HttpContext.Session.GetString("SessionUsuario");
 
             if (value != null)
