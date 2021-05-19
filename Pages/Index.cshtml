@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="input-field col s6 offset-s3">
                         <i class="material-icons prefix">account_circle</i>
-                        <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="Usuario.username">
+                        <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="UsernameUsuario">
                     </div>
                 </div>
                 <div id="passwordrow" class="row">
                     <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
                         <i class="material-icons prefix">lock</i>
-                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="Password">
+                        <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="PasswordUsuario">
                     </div>
                 </div>
                     <p class="credencialesinvalidas">@Model.MensajeError</p>

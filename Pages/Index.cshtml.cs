@@ -11,7 +11,6 @@ using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Text;
-using MVP_Web.Model;
 using Microsoft.AspNetCore.Http;
 
 namespace MVP_Web.Pages
@@ -19,10 +18,11 @@ namespace MVP_Web.Pages
     public class IndexModel : PageModel
     {
         [BindProperty]
-        public Login Usuario { get; set; }
-
+        public string UsernameUsuario { get; set; }
         [BindProperty]
-        public string Password { get; set; }
+        public string PasswordUsuario { get; set; }
+        public string NombreUsuario { get; set; }
+        public string ApellidoUsuario { get; set; }
         public string MensajeError { get; set; }
 
         public void OnGet()
@@ -32,7 +32,7 @@ namespace MVP_Web.Pages
 
         public async Task<IActionResult> OnPost() // Antes: public IActionResult OnPost()
         {
-            if (Usuario.username == null || Password == null)
+            if (UsernameUsuario == null || PasswordUsuario == null)
             {
                 MensajeError = "Credenciales Inválidas";
                 return Page();
@@ -46,8 +46,8 @@ namespace MVP_Web.Pages
                 HttpClient client = new HttpClient();
 
                 JObject joPeticion = new JObject();
-                joPeticion.Add("username", Usuario.username);
-                joPeticion.Add("password", Password);
+                joPeticion.Add("username", UsernameUsuario);
+                joPeticion.Add("password", PasswordUsuario);
 
                 var stringContent = new StringContent(joPeticion.ToString(), Encoding.UTF8, "application/json");
 
@@ -67,32 +67,34 @@ namespace MVP_Web.Pages
                     var query1 = "SELECT Nombre, Apellido FROM Usuario WHERE Id = @id;";
 
                     var cmd = new MySqlCommand(query1, conexion);
-                    cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = Usuario.username;
+                    cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = UsernameUsuario;
+
+                    HttpContext.Session.SetString("SessionUsername", UsernameUsuario);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
-
                     if (reader.Read())
                     {
-                        Usuario.nombre = reader.GetString(0);
-                        Usuario.apellido = reader.GetString(1);
+                        NombreUsuario = reader.GetString(0);
+                        ApellidoUsuario = reader.GetString(1);
                         reader.Close();
                         cmd.CommandText = "INSERT INTO Bitacora(Usuario_Id, Fecha) VALUES(@id, @fecha)";
                         cmd.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = DateTime.Now;
                         cmd.ExecuteNonQuery();
 
-                        HttpContext.Session.SetString("SessionUsuario", JsonConvert.SerializeObject(Usuario));
+                        HttpContext.Session.SetString("SessionNombre", NombreUsuario);
+                        HttpContext.Session.SetString("SessionApellido", ApellidoUsuario);
 
                         return RedirectToPage("menu");
                     }
 
                     reader.Close();
-                    HttpContext.Session.SetString("SessionUsuario", JsonConvert.SerializeObject(Usuario));
+
                     return RedirectToPage("DatosUsuario");
-                    
                 }
                    
                 MensajeError = responseContent;
+
                 return Page();
             }
         }
