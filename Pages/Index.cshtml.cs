@@ -28,6 +28,7 @@ namespace MVP_Web.Pages
         public void OnGet()
         {
             MensajeError = "";
+            HttpContext.Session.Clear();
         }
 
         public async Task<IActionResult> OnPost() // Antes: public IActionResult OnPost()
