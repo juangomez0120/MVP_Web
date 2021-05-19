@@ -43,17 +43,20 @@ namespace MVP_Web.Pages
 
             var cmd = new MySqlCommand(query1, conexion);
 
+            string nombreCaps = PrimeraLetraMayuscula(NombreUsuario);
+            string apellidoCaps = PrimeraLetraMayuscula(ApellidoUsuario);
+
             cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = usernameUsuario;
-            cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(NombreUsuario);
-            cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(ApellidoUsuario);
+            cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = nombreCaps;
+            cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = apellidoCaps;
             cmd.ExecuteNonQuery();
 
             cmd.CommandText = query2;
             cmd.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = DateTime.Now;
             cmd.ExecuteNonQuery();
 
-            HttpContext.Session.SetString("SessionNombre", NombreUsuario);
-            HttpContext.Session.SetString("SessionApellido", ApellidoUsuario);
+            HttpContext.Session.SetString("SessionNombre", nombreCaps);
+            HttpContext.Session.SetString("SessionApellido", apellidoCaps);
 
             return RedirectToPage("menu");
         }
