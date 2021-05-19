@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
-using MVP_Web.Model;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
@@ -33,16 +32,7 @@ namespace MVP_Web.Pages
 
         public IActionResult OnPost()
         {
-            Login Usuario = new Login();
-            string value = HttpContext.Session.GetString("SessionUsuario");
-
-            if (value != null)
-            {
-                Usuario = JsonConvert.DeserializeObject<Login>(value);
-            }
-
-            Usuario.nombre = NombreUsuario;
-            Usuario.apellido = ApellidoUsuario;
+            string usernameUsuario = HttpContext.Session.GetString("SessionUsername");
 
             string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
             MySqlConnection conexion = new MySqlConnection(connectionString);
@@ -53,16 +43,17 @@ namespace MVP_Web.Pages
 
             var cmd = new MySqlCommand(query1, conexion);
 
-            cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = Usuario.username;
-            cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(Usuario.nombre);
-            cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(Usuario.apellido);
+            cmd.Parameters.Add("@id",MySqlDbType.VarChar).Value = usernameUsuario;
+            cmd.Parameters.Add("@nombre", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(NombreUsuario);
+            cmd.Parameters.Add("@apellido", MySqlDbType.VarChar).Value = PrimeraLetraMayuscula(ApellidoUsuario);
             cmd.ExecuteNonQuery();
 
             cmd.CommandText = query2;
             cmd.Parameters.Add("@fecha", MySqlDbType.DateTime).Value = DateTime.Now;
             cmd.ExecuteNonQuery();
 
-            HttpContext.Session.SetString("SessionUsuario", JsonConvert.SerializeObject(Usuario));
+            HttpContext.Session.SetString("SessionNombre", NombreUsuario);
+            HttpContext.Session.SetString("SessionApellido", ApellidoUsuario);
 
             return RedirectToPage("menu");
         }

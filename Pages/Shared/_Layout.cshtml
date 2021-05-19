@@ -17,7 +17,7 @@
         @{
 
             var value = new Byte[20];
-            bool nameOK = Context.Session.TryGetValue("SessionUsuario", out value);
+            bool nameOK = Context.Session.TryGetValue("SessionNombre", out value);
 
             if (nameOK)
             {
@@ -39,7 +39,7 @@
                         <nav>
                             <div class="nav-wrapper white">
                                 <img src="img/logoTernium.png" class="logo" />
-                                <a href="@Url.Page("/Index")" class="center brand-logo red-text">El Gran Escape</a>
+                                <a href="@Url.Page("/menu")" class="center brand-logo red-text">El Gran Escape</a>
                                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                                     <li><a href="@Url.Page("/menu")" class="red-text">Menú</a></li>
                                     <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
