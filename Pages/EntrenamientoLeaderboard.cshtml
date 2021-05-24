@@ -41,129 +41,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                        </td>
+                    @foreach (var item in Model.ListaEntrenamiento)
+                    {
+                        <tr>
+                            <!-- Lugar -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.posicion)
+                            </td>
 
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Dávila
-                        </td>
+                            <!-- Nombre -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
 
-                        <!-- Score -->
-                        <td>
-                            700
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            <img src="img/medalla_plata.png" class="imagenMedalla" />
-                        </td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Cristobal Escamilla
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            600
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            <img src="img/medalla_bronze.png" class="imagenMedalla" />
-                        </td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Wicho Zambrano
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            500
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>4</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Juan Manuel
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            400
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>5</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Lorenzo Ortiz
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            300
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>6</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Pozas
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            200
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>7</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Pozas
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            100
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>8</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Pozas
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            50
-                        </td>
-                    </tr>
+                            <!-- Score -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.score)
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
-    </div>
-
-</div>
-
-
