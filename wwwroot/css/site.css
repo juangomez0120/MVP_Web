@@ -1,5 +1,5 @@
 ﻿body {
-    background:url("../img/background.png");
+    background-color: #f6f6f6;
 
     /* Margin bottom by footer height */
     margin-bottom: 60px;
@@ -76,7 +76,7 @@ tr td:last-child {
 /* Login Content*/
 .contenido { /* Div que contiene todo el login*/
     margin-top: 8%;
-    background-color: rgb(102, 102, 102, 0.7);
+    background-color: #485458;
     border-radius: 25px;
 }
 
