@@ -42,51 +42,46 @@
     </div>
     <div class="col s4">
         <table class="tablaPerfil">
-            <tr>
-                <th>Entrenamientos</th>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Puntaje</td>
-                <td>fecha</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>800</td>
-                <td>10/03/2021</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>700</td>
-                <td>20/03/2021</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>900</td>
-                <td>28/03/2021</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>900</td>
-                <td>29/03/2021</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>900</td>
-                <td>1/04/2021</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>850</td>
-                <td>5/04/2021</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>1000</td>
-                <td>9/04/2021</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Entrenamientos</th>
+                </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Puntaje</th>
+                    <th>Racha</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.ListaEntrenamiento)
+                {
+                <tr>
+                    <!-- # -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.numero)
+                    </td>
+
+                    <!-- Puntaje -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.puntaje)
+                    </td>
+
+                    <!-- Racha -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.racha)
+                    </td>
+
+                    <!-- Fecha -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fecha)
+                    </td>
+                </tr>
+                }
+            </tbody>
         </table>
     </div>
+
     <div class="col s4">
         <table class="tablaPerfil">
             <tr>
