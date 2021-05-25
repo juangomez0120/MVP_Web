@@ -42,6 +42,22 @@ namespace Sprint3.Pages
                     ListaEntrenamiento.Add(en1);
                 }
             }
+
+            pos++;
+            cmd.CommandText = "SELECT Usuario.Nombre, Usuario.Apellido FROM Usuario WHERE NOT EXISTS (SELECT * FROM Entrenamiento WHERE Usuario.Id = Entrenamiento.Usuario_Id);";
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    en1 = new Leaderboard();
+                    en1.posicion = pos;
+                    en1.nombre = reader["Nombre"].ToString() + " " + reader["Apellido"].ToString();
+                    en1.score = 0;
+                    ListaEntrenamiento.Add(en1);
+                }
+            }
+
             conexion.Dispose();
         }
     }
