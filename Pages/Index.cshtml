@@ -5,7 +5,7 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100vh">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
-<body>
+<body id="bodyLogin">
     <header>
     </header>
 
@@ -25,38 +25,33 @@
         <main role="main">
                 <div class="row">
                     <form method="post">
-                        <div class="contenido col s6">
-                            <h2 class="texto center-align">El Gran Escape</h2>
+                        <div class="contenido col s12 m5 l4">
                             <div class="row">
+                                <img id="logoTerniumLogin" src="~/img/logoTernium.png" class="col s8 m5 l5" />
+                            </div>
+                            <h2 class="texto center-align">El Gran Escape</h2>
+                            <div class="row" style="margin-top: 5%; margin-bottom: 0">
                                 <div class="input-field col s6 offset-s3">
-                                    <i class="material-icons prefix">account_circle</i>
                                     <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="UsernameUsuario">
                                 </div>
                             </div>
                             <div id="passwordrow" class="row">
                                 <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
-                                    <i class="material-icons prefix">lock</i>
                                     <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="PasswordUsuario">
                                 </div>
                             </div>
                             <p class="credencialesinvalidas">@Model.MensajeError</p>
                             <div class="row">
-                                <a class="olvidastecontrasena btn-flat col s6 offset-s6">¿Olvidaste tu Contraseña?</a>
-                            </div>
-                            <div class="row">
                                 <input type="submit" id="botonlogin" class="btn col s4 offset-s4" value="Iniciar Sesión">
                             </div>
+                        </div>
+                        <div class="col s8" >
                         </div>
                     </form>
                 </div>
 
         </main>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-
-        </div>
-    </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,8 +1,8 @@
 ﻿body {
-    background-color: #f6f6f6;
+    background-color: white;
 
     /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    margin-bottom: 0px;
 }
 
 .top{
@@ -26,6 +26,11 @@
 /* Container Margins */
 .container{
     margin-top: 5%;
+}
+
+#logoTerniumLogin{
+    margin-top: 8%;
+    margin-left: 8%;
 }
 
 /* Table Sizing */
@@ -75,57 +80,84 @@ tr td:last-child {
 
 /* Login Content*/
 .contenido { /* Div que contiene todo el login*/
-    margin-top: 8%;
-    background-color: #485458;
-    border-radius: 25px;
+    background-color: white;
+    height: 100vh;
 }
 
 .texto  /* Titulo del Login */{
-    color: white;
+    color: black;
     margin-bottom: 10%;
 }
 
 /* Input Modificators */
 input {
-    color: white;
+    color: black;
 }
 
+
 .input-field > label {
-    color: white;
+    color: black;
 }
 
 input[type=text]:not(.browser-default) {
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #d4d4d4;
+    border-bottom: 2px solid #666666;
+    border-right: 2px solid #666666;
+    border-left: 2px solid #666666;
+    border-top: 2px solid #666666;
+    padding: 5%;
+    color: #666666;
+}
+
+::placeholder{
+    color: #666666;
 }
 
 input[type=password]:not(.browser-default) {
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid #666666;
+    border-right: 2px solid #666666;
+    border-left: 2px solid #666666;
+    border-top: 2px solid #666666;
+    color: #666666;
+    background-color: #d4d4d4;
+    padding: 5%;
 }
 
 .row .input-field input[type=text]:focus + label {
-    color: white;
+    color: #d4d4d4;
 }
 
 .row .input-field input[type=text]:focus {
-    border-bottom: 1px solid white;
-    box-shadow: 0 1px 0 0 white;
+    border-bottom: 2px solid #666666;
+    box-shadow: 0 1px 0 0 #d4d4d4;
+}
+
+.input-field input.valid[type=text]:not(.browser-default) {
+    border-bottom: 2px solid #666666;
+    box-shadow: 0 0 0 0;
+}
+
+.input-field input.valid[type=password]:not(.browser-default) {
+    border-bottom: 2px solid #666666;
+    box-shadow: 0 0 0 0;
 }
 
 .row .input-field input[type=password]:focus + label {
-    color: white;
+    color: #d4d4d4;
 }
 
 .row .input-field input[type=password]:focus {
-    border-bottom: 1px solid white;
-    box-shadow: 0 1px 0 0 white;
+    border-bottom: 2px solid #666666;
+    box-shadow: 0 1px 0 0 #d4d4d4;
 }
 
 .input-field .prefix.active {
-    color: white;
+    color: #d4d4d4;
 }
 
 .input-field .prefix {
-    color: white;
+    color: #d4d4d4;
 }
 
 /* Password margin modificators */
@@ -139,8 +171,9 @@ input[type=password]:not(.browser-default) {
 
 /* Texto Olvide Mi Contraseña */
 .olvidastecontrasena {
-    color: white;
+    color: #666666;
     margin-bottom: 5%;
+    font-size: 12px;
 }
 
 .credencialesinvalidas {
@@ -169,15 +202,17 @@ input[type=password]:not(.browser-default) {
 }
 
 #botonlogin {
+    margin-top: 20%;
     margin-bottom: 40px;
     background-color: rgb(255, 51, 0);
     color: white;
+    font-size: 12px;
 }
 
 #botonlogin:hover {
     background-color: rgb(255, 51, 0, 0);
     border: 1px solid rgb(255, 51, 0);
-    color: white;
+    color: #666666;
 }
 
 #botonDatosUsuario {
@@ -186,11 +221,18 @@ input[type=password]:not(.browser-default) {
     color: white;
 }
 
-    #botonDatosUsuario:hover {
-        background-color: rgb(255, 51, 0, 0);
-        border: 1px solid rgb(255, 51, 0);
-        color: white;
-    }
+#botonDatosUsuario:hover {
+    background-color: rgb(255, 51, 0, 0);
+    border: 1px solid rgb(255, 51, 0);
+    color: white;
+}
+
+#bodyLogin {
+    background-image: url("../img/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 /* Dropdown */
 .dropdownTop {
