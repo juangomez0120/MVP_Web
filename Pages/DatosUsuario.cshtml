@@ -1,11 +1,11 @@
 ﻿@page
-@model MVP_Web.Pages.DatosUsuarioModel
+@model DatosUsuarioModel
 @{
     ViewData["Title"] = "Datos";
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100vh">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,46 +17,40 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
 </head>
-<body>
+<body id="bodyLogin">
     <header>
     </header>
 
     <!-- Primera página que ve el usuario cuando se mete es la del leaderboard -->
-    <div class="container">
-        <main role="main">
-            <div class="container">
-                <div class="row">
-                    <form method="post">
-                        <div class="contenido col s12 m10 offset-m1 l8 offset-l2">
-                            <h2 class="texto center-align">Datos de Perfil</h2>
-                            <div class="row">
-                                <div class="input-field col s6 offset-s3">
-                                    <i class="material-icons prefix">account_box</i>
-                                    <input placeholder="Nombre" type="text" id="autocomplete-input3" class="validate" asp-for="NombreUsuario">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s6 offset-s3">
-                                    <i class="material-icons prefix">account_box</i>
-                                    <input placeholder="Apellido" type="text" id="autocomplete-input4" class="validate" asp-for="ApellidoUsuario">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <input type="submit" id="botonDatosUsuario" class="btn col s4 offset-s4" value="Iniciar Sesión">
-                            </div>
+    <main role="main">
+        <div class="row">
+            <form method="post">
+                <div class="contenido col s12 m5 l4">
+                    <div class="row">
+                        <img id="logoTerniumLogin" src="~/img/logoTernium.png" class="col s8 m5 l5" />
+                    </div>
+                    <h2 class="texto center-align">Datos de Perfil</h2>
+                    <div class="row" style="margin-top: 5%; margin-bottom: 0">
+                        <div class="input-field col s6 offset-s3">
+                            <input placeholder="Nombre" type="text" id="autocomplete-input1" class="validate" asp-for="NombreUsuario">
                         </div>
-                    </form>
+                    </div>
+                    <div id="passwordrow" class="row">
+                        <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
+                            <input placeholder="Apellido" type="text" id="autocomplete-input2" class="validate" asp-for="ApellidoUsuario">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <input type="submit" id="botonlogin" class="btn col s4 offset-s4" value="Iniciar Sesión">
+                    </div>
                 </div>
-            </div>
-
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-
+                <div class="col s8">
+                </div>
+            </form>
         </div>
-    </footer>
+
+    </main>
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
