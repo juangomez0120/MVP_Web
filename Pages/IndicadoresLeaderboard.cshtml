@@ -9,72 +9,59 @@
     <div>
 
         <!-- Escoger Opción: Leaderboard de Examen o Entrenamiento o Indicadores-->
-        <div class="botonesranking center row top">
+        <div class="centered row top" style="font-family: 'Oswald', sans-serif; font-size: 24px;">
 
             <div class="col s5">
-                <a href="@Url.Page("/EntrenamientoLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Entrenamiento</a>
+                <a href="@Url.Page("/EntrenamientoLeaderboard")" class="greyForRanking">Entrenamiento</a>
             </div>
 
             <div class="col s3">
-                <a href="@Url.Page("/ExamenLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Examen</a>
+                <a href="@Url.Page("/ExamenLeaderboard")" class="greyForRanking">Examen</a>
             </div>
 
             <div class="col s4">
-                <a href="@Url.Page("/IndicadoresLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Indicadores</a>
+                <a href="@Url.Page("/IndicadoresLeaderboard")" class="red1">Indicadores</a>
             </div>
 
         </div>
 
-        <!-- Indicadores Globales -->
         <div class="top">
+            <table class="centered greyDark">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Intentos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*@foreach (var item in Model.ListaEntrenamiento)*@
+                    @*{*@
+                    <tr>
+                        <!-- Lugar -->
+                        <td>
+                            1
+                        </td>
 
-            <!-- Chatarras más  -->
-            <div class="white-text">
+                        <!-- Nombre -->
+                        <td>
+                            Apodaca
+                        </td>
 
-                <div class="center">
-                    <h4 class="white-text">Chatarras Con Más Errores</h4>
-                </div>
-                <div class="divider white"></div>
+                        <!-- Tipo de Chatarra -->
+                        <td>
+                            2
+                        </td>
 
-                <div class="row top">
-                    <div class="col s4 pull-s5">
-                        <div class="card chatarraIndicadores hoverable">
-                            <div class="card-image">
-                                <img src="img/chatarra1.jpg">
-                                <span class="card-title">Lagos Apodaca 6709</span>
-                            </div>
-                            <div class="card-content black-text center">
-                                <h6>Intentos Fallidos: 100</h6>
-                                <h6>Chatarra Tipo:1</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s4 pull-s1">
-                        <div class="card chatarraIndicadores hoverable">
-                            <div class="card-image">
-                                <img src="img/chatarra2.jpg">
-                                <span class="card-title">Lagos Apodaca 6709</span>
-                            </div>
-                            <div class="card-content black-text center">
-                                <h6>Intentos Fallidos: 100</h6>
-                                <h6>Chatarra Tipo:2</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s4 push-s3">
-                        <div class="card chatarraIndicadores hoverable">
-                            <div class="card-image">
-                                <img src="img/chatarra2.jpg">
-                                <span class="card-title">Lagos Apodaca 6709</span>
-                            </div>
-                            <div class="card-content black-text center">
-                                <h6>Intentos Fallidos: 100</h6>
-                                <h6>Chatarra Tipo:3</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                        <!-- Intentos -->
+                        <td>
+                            500
+                        </td>
+                    </tr>
+                    @*}*@
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
