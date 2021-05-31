@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace MVP_Web.Model
 {
-    public class Class
+    public class Indicadores
     {
+        public string nombre { set; get; }
+        public int tipo { set; get; }
+        public int intentos { set; get; }
     }
 }
