@@ -17,93 +17,60 @@
                             <tr>
                                 <th>#</th>
                                 <th>Puntaje</th>
-                                <th>Fecha</th>
+                                <th>Mes</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @*@foreach (var item in Model.ListaEntrenamiento)*@
-                            @*{*@
                             <tr>
-                                <!-- Lugar -->
-                                <td>
-                                    1
-                                </td>
-
-                                <!-- Nombre -->
-                                <td>
-                                    500
-                                </td>
-
-                                <!-- Score -->
-                                <td>
-                                    5/29/2021
-                                </td>
+                                <td>1</td>
+                                <td>80</td>
+                                <td>Abril2021</td>
                             </tr>
                             <tr>
-                                <!-- Lugar -->
-                                <td>
-                                    2
-                                </td>
-
-                                <!-- Nombre -->
-                                <td>
-                                    500
-                                </td>
-
-                                <!-- Score -->
-                                <td>
-                                    5/31/2021
-                                </td>
+                                <td>2</td>
+                                <td>70</td>
+                                <td>Abril2021</td>
                             </tr>
                             <tr>
-                                <!-- Lugar -->
-                                <td>
-                                    2
-                                </td>
-
-                                <!-- Nombre -->
-                                <td>
-                                    500
-                                </td>
-
-                                <!-- Score -->
-                                <td>
-                                    5/31/2021
-                                </td>
+                                <td>3</td>
+                                <td>83</td>
+                                <td>Abril2021</td>
                             </tr>
                             <tr>
-                                <!-- Lugar -->
-                                <td>
-                                    2
-                                </td>
-
-                                <!-- Nombre -->
-                                <td>
-                                    500
-                                </td>
-
-                                <!-- Score -->
-                                <td>
-                                    5/31/2021
-                                </td>
+                                <td>4</td>
+                                <td>85</td>
+                                <td>Abril2021</td>
                             </tr>
                             <tr>
-                                <!-- Lugar -->
-                                <td>
-                                    2
-                                </td>
-
-                                <!-- Nombre -->
-                                <td>
-                                    500
-                                </td>
-
-                                <!-- Score -->
-                                <td>
-                                    5/31/2021
-                                </td>
+                                <td>5</td>
+                                <td>89</td>
+                                <td>Abril2021</td>
                             </tr>
-                            @*}*@
+                            <tr>
+                                <td>6</td>
+                                <td>94</td>
+                                <td>Abril2021</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>90</td>
+                                <td>Abril2021</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>100</td>
+                                <td>Mayo2021</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>95</td>
+                                <td>Mayo2021</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>100</td>
+                                <td>Mayo2021</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -120,94 +87,35 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Puntaje</th>
+                                        <th>Racha Máxima</th>
                                         <th>Fecha</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @*@foreach (var item in Model.ListaEntrenamiento)*@
-                                    @*{*@
+                                    @foreach (var item in Model.ListaEntrenamiento)
+                                    {
                                     <tr>
-                                        <!-- Lugar -->
+                                        <!-- Número -->
                                         <td>
-                                            1
+                                            @Html.DisplayFor(modelItem => item.numero)
                                         </td>
 
-                                        <!-- Nombre -->
+                                        <!-- Puntaje -->
                                         <td>
-                                            500
+                                            @Html.DisplayFor(modelItem => item.puntaje)
                                         </td>
 
-                                        <!-- Score -->
+                                        <!-- Racha -->
                                         <td>
-                                            5/31/2021
+                                            @Html.DisplayFor(modelItem => item.racha)
+                                        </td>
+
+                                        <!-- Fecha -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.fecha)
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <!-- Lugar -->
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <!-- Nombre -->
-                                        <td>
-                                            500
-                                        </td>
-
-                                        <!-- Score -->
-                                        <td>
-                                            5/31/2021
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Lugar -->
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <!-- Nombre -->
-                                        <td>
-                                            500
-                                        </td>
-
-                                        <!-- Score -->
-                                        <td>
-                                            5/31/2021
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Lugar -->
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <!-- Nombre -->
-                                        <td>
-                                            500
-                                        </td>
-
-                                        <!-- Score -->
-                                        <td>
-                                            5/31/2021
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <!-- Lugar -->
-                                        <td>
-                                            2
-                                        </td>
-
-                                        <!-- Nombre -->
-                                        <td>
-                                            500
-                                        </td>
-
-                                        <!-- Score -->
-                                        <td>
-                                            5/31/2021
-                                        </td>
-                                    </tr>
-
-                                    @*}*@
+                                    }
                                 </tbody>
                             </table>
                         </div>
