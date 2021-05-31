@@ -36,30 +36,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @*@foreach (var item in Model.ListaEntrenamiento)*@
-                    @*{*@
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            1
-                        </td>
+                    @foreach (var item in Model.ListaIndicadores)
+                    {
+                        <tr>
+                            <!-- Lugar -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.posicion)
+                            </td>
 
-                        <!-- Nombre -->
-                        <td>
-                            Apodaca
-                        </td>
+                            <!-- Nombre -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.nombre)
+                            </td>
 
-                        <!-- Tipo de Chatarra -->
-                        <td>
-                            2
-                        </td>
+                            <!-- Tipo de Chatarra -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tipo)
+                            </td>
 
-                        <!-- Intentos -->
-                        <td>
-                            500
-                        </td>
-                    </tr>
-                    @*}*@
+                            <!-- Intentos -->
+                            <td>
+                                @Html.DisplayFor(modelItem => item.intentos)
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
