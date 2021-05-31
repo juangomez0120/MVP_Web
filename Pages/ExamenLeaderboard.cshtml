@@ -36,25 +36,28 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @*@foreach (var item in Model.ListaEntrenamiento)*@
-                     @*{*@
-                        <tr>
-                            <!-- Lugar -->
-                            <td>
-                                1
-                            </td>
+                    @if (Model.Estatus == true)
+                    {
+                        @for (var i = 1; i <= Model.ListaExamenes.Count; i++)
+                        {
+                            <tr>
+                                <!-- Lugar -->
+                                <td>
+                                    @i
+                                </td>
 
-                            <!-- Nombre -->
-                            <td>
-                               Nombre
-                            </td>
+                                <!-- Nombre -->
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.ListaExamenes[i-1].username)
+                                </td>
 
-                            <!-- Score -->
-                            <td>
-                                Score
-                            </td>
-                        </tr>
-                     @*}*@
+                                <!-- Score -->
+                                <td>
+                                    @Html.DisplayFor(modelItem => Model.ListaExamenes[i-1].score)
+                                </td>
+                            </tr>
+                        }
+                    }
                 </tbody>
             </table>
         </div>

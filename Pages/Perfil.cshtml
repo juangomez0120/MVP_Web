@@ -20,6 +20,46 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>80</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>70</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>83</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>85</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>89</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>94</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>95</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>100</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -36,10 +76,35 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Puntaje</th>
+                                        <th>Racha Máxima</th>
                                         <th>Fecha</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach (var item in Model.ListaEntrenamiento)
+                                    {
+                                    <tr>
+                                        <!-- Número -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.numero)
+                                        </td>
+
+                                        <!-- Puntaje -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.puntaje)
+                                        </td>
+
+                                        <!-- Racha -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.racha)
+                                        </td>
+
+                                        <!-- Fecha -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.fecha)
+                                        </td>
+                                    </tr>
+                                    }
                                 </tbody>
                             </table>
                         </div>

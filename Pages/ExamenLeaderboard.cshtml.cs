@@ -6,43 +6,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 using MVP_Web.Model;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using System.Text;
+using Microsoft.AspNetCore.Http;
 
 namespace Sprint3.Pages
 {
     public class ExamenLeaderboardModel : PageModel
     {
-        public IList<Leaderboard> ListaEntrenamiento { get; set; }
+        public List<LeaderboardExamen> ListaExamenes { get; set; }
+        public bool Estatus { get; set; }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGet()
         {
-            ListaEntrenamiento = new List<Leaderboard>();
-
-            //Base de Datos
-            string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
-            MySqlConnection conexion = new MySqlConnection(connectionString);
-            conexion.Open();
-
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conexion;
-            cmd.CommandText = "SELECT Usuario.Nombre, Usuario.Apellido, SUM(Entrenamiento.Puntaje) AS PuntajeTotal FROM Usuario INNER JOIN Entrenamiento ON Usuario.Id = Entrenamiento.Usuario_Id GROUP BY Usuario.Id ORDER BY PuntajeTotal DESC LIMIT 10;";
-
-            Leaderboard en1 = new Leaderboard();
-            ListaEntrenamiento = new List<Leaderboard>();
-            int pos = 0;
-
-            //Agarra información de Base de Datos y se lo pone a las variables
-            using (var reader = cmd.ExecuteReader())
+            if (ListaExamenes == null)
             {
-                while (reader.Read())
+                Estatus = false;
+
+                string respuesta = "[]";
+
+                string jsonString = HttpContext.Session.GetString("SessionKey");
+
+                Key llave = JsonConvert.DeserializeObject<Key>(jsonString);
+
+                Uri baseUrl = new Uri("https://chatarrap-api.herokuapp.com/attempts/scores");
+
+                HttpClient client = new HttpClient();
+
+                client.DefaultRequestHeaders.Add("auth_key", llave.token);
+
+                HttpResponseMessage response = await client.GetAsync(baseUrl.ToString());
+
+                if (response.IsSuccessStatusCode)
                 {
-                    en1 = new Leaderboard();
-                    en1.posicion = ++pos;
-                    en1.nombre = reader["Nombre"].ToString() + " " + reader["Apellido"].ToString();
-                    en1.score = Convert.ToInt32(reader["PuntajeTotal"]);
-                    ListaEntrenamiento.Add(en1);
+                    respuesta = await response.Content.ReadAsStringAsync();
+                    ListaExamenes = JsonConvert.DeserializeObject<List<LeaderboardExamen>>(respuesta);
+                    Estatus = true;
                 }
             }
-            conexion.Dispose();
+            else
+            {
+                Estatus = true;
+            }
+
+            return Page();
         }
     }
 }
