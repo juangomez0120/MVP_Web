@@ -5,91 +5,134 @@
 }
 
 <div class="container">
-    <h1 class="tituloPerfil center-align"> @Model.NombreUsuario @Model.ApellidoUsuario </h1>
-</div>
-<div class="row">
-    <div class="col s4">
-        <table class="tablaPerfil">
-            <tr>
-                <th>Exámenes</th>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Puntaje</td>
-                <td>fecha</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>80</td>
-                <td>10/03/2021</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>85</td>
-                <td>20/03/2021</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>90</td>
-                <td>28/03/2021</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>100</td>
-                <td>10/04/2021</td>
-            </tr>
-        </table>
-    </div>
-    <div class="col s4">
-        <table class="tablaPerfil">
-            <thead>
-                <tr>
-                    <th>Entrenamientos</th>
-                </tr>
-                <tr>
-                    <th>#</th>
-                    <th>Puntaje</th>
-                    <th>Racha</th>
-                    <th>Fecha</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.ListaEntrenamiento)
-                {
-                <tr>
-                    <!-- # -->
-                    <td>
-                        @Html.DisplayFor(modelItem => item.numero)
-                    </td>
+    <div class="row centered">
+        <div class="col s8">
+            @*Examenes*@
+            @*Titulo*@
+            <h3 class="centered">Examen</h3>
+            <div class="row">
+                <div class="col 12 top">
+                    <table class="centered greyDark">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Puntos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @*@foreach (var item in Model.ListaEntrenamiento)*@
+                            @*{*@
+                            <tr>
+                                <!-- Lugar -->
+                                <td>
+                                    1
+                                </td>
 
-                    <!-- Puntaje -->
-                    <td>
-                        @Html.DisplayFor(modelItem => item.puntaje)
-                    </td>
+                                <!-- Nombre -->
+                                <td>
+                                    Nombre
+                                </td>
 
-                    <!-- Racha -->
-                    <td>
-                        @Html.DisplayFor(modelItem => item.racha)
-                    </td>
+                                <!-- Score -->
+                                <td>
+                                    Score
+                                </td>
+                            </tr>
+                            @*}*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            @*Entrenamientos*@
+            <div class="row">
+                <div class="col 12 top">
+                    @*Titulo*@
+                    <h3 class="centered">Entrenamientos</h3>
+                    <div class="row">
+                        <div class="col 12 top">
+                            <table class="centered greyDark">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nombre</th>
+                                        <th>Puntos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @*@foreach (var item in Model.ListaEntrenamiento)*@
+                                    @*{*@
+                                    <tr>
+                                        <!-- Lugar -->
+                                        <td>
+                                            1
+                                        </td>
 
-                    <!-- Fecha -->
-                    <td>
-                        @Html.DisplayFor(modelItem => item.fecha)
-                    </td>
-                </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                                        <!-- Nombre -->
+                                        <td>
+                                            Nombre
+                                        </td>
 
-    <div class="col s4">
-        <table class="tablaPerfil">
-            <tr>
-                <th>Medallas</th>
-            </tr>
-            <tr>
-                <td><img src="img/medalla_oro.png" class="imagenMedalla" /></td>
-            </tr>
-        </table>
+                                        <!-- Score -->
+                                        <td>
+                                            Score
+                                        </td>
+                                    </tr>
+                                    @*}*@
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col s4">
+            @*Titulo*@
+            <div class="centered">
+                <h3>Medallas</h3>
+            </div>
+            @*Subcategoría de Medallas 1*@
+            <div class="row">
+                <div class="col 12">
+                    <h6>Categoría 1</h6>
+                    <div class="row">
+                        <div class="col 12">
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Subcategoría de Medallas 2*@
+            <div class="row">
+                <div class="col 12">
+                    <h6>Categoría 2</h6>
+                    <div class="row">
+                        <div class="col 12">
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*Subcategoría de Medallas 3*@
+            <div class="row">
+                <div class="col 12">
+                    <h6>Categoría 3</h6>
+                    <div class="row">
+                        <div class="col 12">
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
