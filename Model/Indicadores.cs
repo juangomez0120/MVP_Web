@@ -10,5 +10,6 @@ namespace MVP_Web.Model
         public string nombre { set; get; }
         public int tipo { set; get; }
         public int intentos { set; get; }
+        public int posicion { set; get; }
     }
 }
