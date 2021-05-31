@@ -4,58 +4,78 @@
     ViewData["Title"] = "Perfil";
 }
 
-<div class="container">
-    <div class="row centered">
+<div class="" style="font-family: 'Oswald', sans-serif;">
+    <div class="row">
         <div class="col s8">
             @*Examenes*@
             @*Titulo*@
-            <h3 class="centered">Examenes</h3>
+            <h4 class="center-align greyForRanking">Historial de Examenes</h4>
             <div class="row">
-                <div class="col 12 top">
+                <div class="col 12">
                     <table class="centered greyDark">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Nombre</th>
-                                <th>Puntos</th>
+                                <th>Puntaje</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @*@foreach (var item in Model.ListaEntrenamiento)*@
-                            @*{*@
                             <tr>
-                                <!-- Lugar -->
-                                <td>
-                                    1
-                                </td>
-
-                                <!-- Nombre -->
-                                <td>
-                                    Nombre
-                                </td>
-
-                                <!-- Score -->
-                                <td>
-                                    Score
-                                </td>
+                                <td>1</td>
+                                <td>80</td>
                             </tr>
-                            @*}*@
+                            <tr>
+                                <td>2</td>
+                                <td>70</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>83</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>85</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>89</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>94</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>90</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>100</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>95</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>100</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             @*Entrenamientos*@
             <div class="row">
-                <div class="col 12 top">
+                <div class="col 12">
                     @*Titulo*@
-                    <h3 class="centered">Entrenamientos</h3>
+                    <h4 class="center-align greyForRanking">Historial de Entrenamientos</h4>
                     <div class="row">
-                        <div class="col 12 top">
+                        <div class="col 12">
                             <table class="centered greyDark">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Score</th>
+                                        <th>Puntaje</th>
                                         <th>Racha Máxima</th>
                                         <th>Fecha</th>
                                     </tr>
@@ -69,12 +89,12 @@
                                             @Html.DisplayFor(modelItem => item.numero)
                                         </td>
 
-                                        <!-- Score -->
+                                        <!-- Puntaje -->
                                         <td>
                                             @Html.DisplayFor(modelItem => item.puntaje)
                                         </td>
 
-                                        <!-- Streak -->
+                                        <!-- Racha -->
                                         <td>
                                             @Html.DisplayFor(modelItem => item.racha)
                                         </td>
@@ -92,17 +112,17 @@
                 </div>
             </div>
         </div>
-        <div class="col s4">
+        <div class="col s3 offset-s1">
             @*Titulo*@
-            <div class="centered">
-                <h3>Medallas</h3>
-            </div>
-            @*Subcategoría de Medallas 1*@
+            <h4 class="center-align greyForRanking">Medallas</h4>
+
+            @*Subcategoría de Medallas 2*@
             <div class="row">
                 <div class="col 12">
-                    <h6>Categoría 1</h6>
+                    <h6 class="greyDark">Categoría 1</h6>
                     <div class="row">
                         <div class="col 12">
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
@@ -114,9 +134,10 @@
             @*Subcategoría de Medallas 2*@
             <div class="row">
                 <div class="col 12">
-                    <h6>Categoría 2</h6>
+                    <h6 class="greyDark">Categoría 2</h6>
                     <div class="row">
                         <div class="col 12">
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
@@ -128,9 +149,10 @@
             @*Subcategoría de Medallas 3*@
             <div class="row">
                 <div class="col 12">
-                    <h6>Categoría 3</h6>
+                    <h6 class="greyDark">Categoría 3</h6>
                     <div class="row">
                         <div class="col 12">
+                            <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
                             <img src="img/medalla_oro.png" class="imagenMedalla" />
