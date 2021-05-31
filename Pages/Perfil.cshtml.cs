@@ -49,7 +49,7 @@ namespace Sprint3.Pages
                     en1.numero = ++pos;
                     en1.puntaje = Convert.ToInt32(reader["Puntaje"]);
                     en1.racha = Convert.ToInt32(reader["StreakMax"]);
-                    en1.fecha = reader["Fecha"].ToString();
+                    en1.fecha = DateTime.Parse(reader["Fecha"].ToString()).ToShortDateString();
                     ListaEntrenamiento.Add(en1);
                 }
             }
