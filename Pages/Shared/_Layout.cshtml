@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Sprint3</title>
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,9 +20,9 @@
     <header>   
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="@Url.Page("/Perfil")" class="red-text">Perfil</a></li>
+            <li><a href="@Url.Page("/Perfil")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif;">Perfil</a></li>
             <li class="divider"></li>
-            <li><a href="@Url.Page("/Index")" class="red-text">Terminar Sesión</a></li>
+            <li><a href="@Url.Page("/Index")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif;">Terminar Sesión</a></li>
         </ul>
         <script>$(document).ready(function () {
                 $('.dropdown-trigger').dropdown();
@@ -28,12 +33,12 @@
             <nav>
                 <div class="nav-wrapper white">
                     <img src="img/logoTernium.png" class="logo" />
-                    <a href="@Url.Page("/menu")" class="center brand-logo red-text">El Gran Escape</a>
+                    <a href="@Url.Page("/menu")" class="center brand-logo red-text" style="font-family: 'Oswald', sans-serif;">El Gran Escape</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="@Url.Page("/menu")" class="red-text">Menú</a></li>
-                        <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="red-text">Ranking</a></li>
+                        <li><a href="@Url.Page("/menu")" class="greyDark" style="font-family: 'Oswald', sans-serif;">Menú</a></li>
+                        <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="greyDark" style="font-family: 'Oswald', sans-serif;">Ranking</a></li>
                         <!-- Dropdown Trigger -->
-                        <li><a href="" class="btn btn-floating red dropdown-trigger" data-target="dropdown1"><i class="dropdown-trigger red material-icons">person</i></a></li>
+                        <li><a href="" class="btn btn-floating red dropdown-trigger" data-target="dropdown1"><i class="dropdown-trigger blue-grey darken-2 material-icons">person</i></a></li>
                         <!--
                     <li><a href="" class="btn btn-floating red white-text dropdown-trigger" data-target="dropdown1"></a></li>
                         -->

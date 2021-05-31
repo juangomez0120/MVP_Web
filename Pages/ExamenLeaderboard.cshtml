@@ -6,162 +6,58 @@
 
 <div class="container">
     <!-- Leaderboard -->
-    <div class="imagenBackground">
+    <div>
 
         <!-- Escoger Opción: Leaderboard de Examen o Entrenamiento o Indicadores-->
-        <div class="center row top">
+        <div class="centered row top" style="font-family: 'Oswald', sans-serif; font-size: 24px;">
 
             <div class="col s5">
-                <a href="@Url.Page("/EntrenamientoLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Entrenamiento</a>
+                <a href="@Url.Page("/EntrenamientoLeaderboard")" class="greyForRanking">Entrenamiento</a>
             </div>
 
             <div class="col s3">
-                <a href="@Url.Page("/ExamenLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Examen</a>
+                <a href="@Url.Page("/ExamenLeaderboard")" class="red1">Examen</a>
             </div>
 
             <div class="col s4">
-                <a href="@Url.Page("/IndicadoresLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Indicadores</a>
+                <a href="@Url.Page("/IndicadoresLeaderboard")" class="greyForRanking">Indicadores</a>
             </div>
 
         </div>
 
-        <!-- Medallas
-        Usuario más alto durante el mes = medalla de oro
-        Segundo usuario más alto durante el mes = medalla de oro
-        Tercer usuario más alto durante el mes = medalla de bronze
-        -->
-
+            
         <div class="top">
-            <table class="ranking centered white-text">
+            <table class="centered greyDark">
                 <thead>
                     <tr>
-                        <th>Ranking</th>
+                        <th>#</th>
                         <th>Nombre</th>
-                        <th>Score</th>
+                        <th>Puntos</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                        </td>
+                    @*@foreach (var item in Model.ListaEntrenamiento)*@
+                     @*{*@
+                        <tr>
+                            <!-- Lugar -->
+                            <td>
+                                1
+                            </td>
 
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Dávila
-                        </td>
+                            <!-- Nombre -->
+                            <td>
+                               Nombre
+                            </td>
 
-                        <!-- Score -->
-                        <td>
-                            700
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            <img src="img/medalla_plata.png" class="imagenMedalla" />
-                        </td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Cristobal Escamilla
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            600
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>
-                            <img src="img/medalla_bronze.png" class="imagenMedalla" />
-                        </td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Wicho Zambrano
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            500
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>4</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Juan Manuel
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            400
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>5</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Lorenzo Ortiz
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            300
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>6</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Pozas
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            200
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>7</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Pozas
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            100
-                        </td>
-                    </tr>
-                    <tr>
-                        <!-- Lugar -->
-                        <td>8</td>
-
-                        <!-- Nombre -->
-                        <td>
-                            Ernesto Pozas
-                        </td>
-
-                        <!-- Score -->
-                        <td>
-                            50
-                        </td>
-                    </tr>
+                            <!-- Score -->
+                            <td>
+                                Score
+                            </td>
+                        </tr>
+                     @*}*@
                 </tbody>
             </table>
         </div>
+        
     </div>
-
 </div>

@@ -252,15 +252,48 @@ input[type=password]:not(.browser-default) {
 }
 
 .ranking {
-    background-color: rgb(102, 102, 102);
+    background-color: #77787B;
 }
 
-#botonesLeaderboard {
-    background-color: rgb(255, 51, 0);
+
+
+/* Color Rojo de Opciones para página de Ranking */
+.red1 {
+    color: #FF3301;
 }
 
-    #botonesLeaderboard:hover {
-        background-color: rgb(255, 51, 0, 0);
-        border: 1px solid rgb(255, 51, 0);
-        color: white;
-    }
+/* Color Gris de Opciones para página de Ranking */
+.greyForRanking {
+    color: #77787B;
+}
+
+/* Color Gris de Navegación */
+.greyDark {
+    color: #4A5458;
+}
+
+/* Color Gris para Lineas de Tabla */
+.greyTable {
+    color: #4A5458;
+}
+
+
+/* Diseño de Tabla */
+tr {
+    font-size: 18px;
+    font-family: 'Oswald', sans-serif;
+}
+
+td {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*Borders de Secciones center perfil*/
+.perfilBorders {
+    border-style: solid;
+    border-color: #4A5458;
+}
+
+
+

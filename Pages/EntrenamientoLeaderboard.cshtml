@@ -6,38 +6,32 @@
 
 <div class="container">
     <!-- Leaderboard -->
-    <div class="imagenBackground">
+    <div>
 
         <!-- Escoger Opción: Leaderboard de Examen o Entrenamiento o Indicadores-->
-        <div class="botonesranking center row top">
+        <div class="centered row top" style="font-family: 'Oswald', sans-serif; font-size: 24px;">
 
             <div class="col s5">
-                <a href="@Url.Page("/EntrenamientoLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Entrenamiento</a>
+                <a href="@Url.Page("/EntrenamientoLeaderboard")" class="red1">Entrenamiento</a>
             </div>
 
             <div class="col s3">
-                <a href="@Url.Page("/ExamenLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Examen</a>
+                <a href="@Url.Page("/ExamenLeaderboard")" class="greyForRanking">Examen</a>
             </div>
 
             <div class="col s4">
-                <a href="@Url.Page("/IndicadoresLeaderboard")" class="btn white-text" id="botonesLeaderboard"><i class="material-icons left">cloud</i>Indicadores</a>
+                <a href="@Url.Page("/IndicadoresLeaderboard")" class="greyForRanking">Indicadores</a>
             </div>
 
         </div>
 
-        <!-- Medallas
-    Usuario más alto durante el mes = medalla de oro
-    Segundo usuario más alto durante el mes = medalla de oro
-    Tercer usuario más alto durante el mes = medalla de bronze
-    -->
-
         <div class="top">
-            <table class="ranking centered white-text">
+            <table class="centered greyDark">
                 <thead>
                     <tr>
-                        <th>Ranking</th>
+                        <th>#</th>
                         <th>Nombre</th>
-                        <th>Score</th>
+                        <th>Puntos</th>
                     </tr>
                 </thead>
                 <tbody>
