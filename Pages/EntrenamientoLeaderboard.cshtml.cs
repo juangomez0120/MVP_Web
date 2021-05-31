@@ -11,11 +11,11 @@ namespace Sprint3.Pages
 {
     public class EntrenamientoLeaderboardModel : PageModel
     {
-        public IList<Leaderboard> ListaEntrenamiento { get; set; }
+        public IList<LeaderboardEntrenamiento> ListaEntrenamiento { get; set; }
 
         public void OnGet()
         {
-            ListaEntrenamiento = new List<Leaderboard>();
+            ListaEntrenamiento = new List<LeaderboardEntrenamiento>();
 
             //Base de Datos
             string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
@@ -26,8 +26,8 @@ namespace Sprint3.Pages
             cmd.Connection = conexion;
             cmd.CommandText = "SELECT Usuario.Nombre, Usuario.Apellido, SUM(Entrenamiento.Puntaje) AS PuntajeTotal FROM Usuario INNER JOIN Entrenamiento ON Usuario.Id = Entrenamiento.Usuario_Id GROUP BY Usuario.Id ORDER BY PuntajeTotal DESC LIMIT 10;";
 
-            Leaderboard en1 = new Leaderboard();
-            ListaEntrenamiento = new List<Leaderboard>();
+            LeaderboardEntrenamiento en1 = new LeaderboardEntrenamiento();
+            ListaEntrenamiento = new List<LeaderboardEntrenamiento>();
             int pos = 0;
 
             //Agarra información de Base de Datos y se lo pone a las variables
@@ -35,9 +35,9 @@ namespace Sprint3.Pages
             {
                 while (reader.Read())
                 {
-                    en1 = new Leaderboard();
+                    en1 = new LeaderboardEntrenamiento();
                     en1.posicion = ++pos;
-                    en1.nombre = reader["Nombre"].ToString() + " " + reader["Apellido"].ToString();
+                    en1.username = reader["Nombre"].ToString() + " " + reader["Apellido"].ToString();
                     en1.score = Convert.ToInt32(reader["PuntajeTotal"]);
                     ListaEntrenamiento.Add(en1);
                 }
@@ -50,9 +50,9 @@ namespace Sprint3.Pages
             {
                 while (reader.Read())
                 {
-                    en1 = new Leaderboard();
+                    en1 = new LeaderboardEntrenamiento();
                     en1.posicion = pos;
-                    en1.nombre = reader["Nombre"].ToString() + " " + reader["Apellido"].ToString();
+                    en1.username = reader["Nombre"].ToString() + " " + reader["Apellido"].ToString();
                     en1.score = 0;
                     ListaEntrenamiento.Add(en1);
                 }

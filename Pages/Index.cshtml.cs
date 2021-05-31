@@ -31,7 +31,7 @@ namespace MVP_Web.Pages
             HttpContext.Session.Clear();
         }
 
-        public async Task<IActionResult> OnPost() // Antes: public IActionResult OnPost()
+        public async Task<IActionResult> OnPost()
         {
             if (UsernameUsuario == null || PasswordUsuario == null)
             {
@@ -40,7 +40,7 @@ namespace MVP_Web.Pages
             }
             else
             {
-                string responseContent = "Credenciales Inválidas";
+                string responseContent = "[]";
 
                 Uri baseURL = new Uri("https://chatarrap-api.herokuapp.com/users/login");
 
