@@ -4,10 +4,14 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.StaticFiles;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace MVP_Web
 {
@@ -48,8 +52,20 @@ namespace MVP_Web
                 app.UseHsts();
             }
 
+            var provider = new FileExtensionContentTypeProvider();
+            // Add new mappings
+            provider.Mappings[".data"] = "application/unityweb";
+
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
+                //RequestPath = "/StaticContentDir",
+                ContentTypeProvider = provider
+            });
+
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -61,6 +77,8 @@ namespace MVP_Web
             {
                 endpoints.MapRazorPages();
             });
+
+
         }
     }
 }
