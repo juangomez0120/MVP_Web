@@ -19,7 +19,8 @@ namespace Sprint3.Pages
         public string NombreUsuario { get; set; }
         public string ApellidoUsuario { get; set; }
         public IList<Entrenamiento> ListaEntrenamiento { get; set; }
-        public Dictionary<string, Dictionary<string, Dictionary<string, int[]>>> ListaExamenes { get; set; }
+        // public Dictionary<string, Dictionary<string, Dictionary<string, int[]>>> ListaExamenes { get; set; }
+        public List<List<string>> ListaMedallas { get; set; }
         public bool Estatus { get; set; }
 
         public void OnGet() // async Task<IActionResult> OnGet()
@@ -59,6 +60,7 @@ namespace Sprint3.Pages
             }*/
 
             historialEntrenamiento(UsernameUsuario);
+            medallas(UsernameUsuario);
 
             // return Page();
         }
@@ -94,6 +96,41 @@ namespace Sprint3.Pages
                 }
             }
             conexion.Dispose();
+        }
+
+        public void medallas(string UsernameUsuario)
+        {
+            ListaMedallas = new List<List<string>>();
+            for(int i = 1; i <= 3; i++)
+            {
+                ListaMedallas.Add(new List<string>());
+            }
+
+            //Base de Datos
+            string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
+            MySqlConnection conexion = new MySqlConnection(connectionString);
+            conexion.Open();
+
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexion;
+            cmd.CommandText = "SELECT Medalla.SubCategoriaMedalla_Id, SubCategoriaMedalla.Nombre, SubCategoriaMedalla.CategoriaMedalla_Id FROM Medalla INNER JOIN SubCategoriaMedalla ON Medalla.SubCategoriaMedalla_Id = SubCategoriaMedalla.Id WHERE Medalla.Usuario_Id = @id;";
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = UsernameUsuario;
+
+            int categoria;
+            string nombre;
+
+            //Agarra información de Base de Datos y se lo pone a las variables
+            using (var reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    categoria = Convert.ToInt32(reader["CategoriaMedalla_Id"]);
+                    nombre = reader["Nombre"].ToString();
+                    ListaMedallas[categoria - 1].Add(nombre);
+                }
+            }
+            conexion.Dispose();
+
         }
     }
 }
