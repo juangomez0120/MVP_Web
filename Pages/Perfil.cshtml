@@ -141,14 +141,13 @@
             @*Subcategoría de Medallas 2*@
             <div class="row">
                 <div class="col s12">
-                    <h6 class="greyDark">Categoría 1</h6>
+                    <h6 class="greyDark">Categoría Exámenes</h6>
                     <div class="row">
                         <div class="col 12">
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            @foreach (var item in Model.ListaMedallas[0])
+                            {
+                                <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            }
                         </div>
                     </div>
                 </div>
@@ -156,14 +155,13 @@
             @*Subcategoría de Medallas 2*@
             <div class="row">
                 <div class="col s12">
-                    <h6 class="greyDark">Categoría 2</h6>
+                    <h6 class="greyDark">Categoría Inmunidad</h6>
                     <div class="row">
                         <div class="col 12">
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            @foreach (var item in Model.ListaMedallas[1])
+                            {
+                                <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            }
                         </div>
                     </div>
                 </div>
@@ -171,14 +169,13 @@
             @*Subcategoría de Medallas 3*@
             <div class="row">
                 <div class="col s12">
-                    <h6 class="greyDark">Categoría 3</h6>
+                    <h6 class="greyDark">Categoría Ranking</h6>
                     <div class="row">
                         <div class="col 12">
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
-                            <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            @foreach (var item in Model.ListaMedallas[2])
+                            {
+                                <img src="img/medalla_oro.png" class="imagenMedalla" />
+                            }
                         </div>
                     </div>
                 </div>
