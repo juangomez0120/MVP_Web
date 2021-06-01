@@ -5,19 +5,19 @@
 }
 
 <div class="row">
-    <div class="imagenesLanding col l5 m4">
+    <div class="imagenesLanding col l5 m5 s12">
         <img id="imagenMenu" src="~/img/img_37012.jpg" />
     </div>
-    <div class="textoLanding col l5 m6 offset-l2">
-        <h2>Bienvenido @Model.Nombre,</h2>
+    <div class="textoLanding col l5 offset-l2 m5 offset-m2 s12">
+        <h3>Bienvenido @Model.Nombre,</h3>
         <div class="row"></div>
-        <h5 style="color: #666666">Aquí podrás entrenar para la labor que realizaras en las plantas de Ternium.</h5>
+        <h6 class="flow-text" style="color: #666666">Aquí podrás entrenar para la labor que realizaras en las plantas de Ternium.</h6>
         <div class="botones1 row">
-            <a href="@Url.Page("/Examen")" class="botonmenu btn-large col l4 offset-l1">
+            <a href="@Url.Page("/Examen")" class="botonmenu btn-large col s4 offset-s1">
                 Examen
             </a>
-            <a href="@Url.Page("/Practica")" class="botonmenu btn-large col l4 offset-l1">
-                Entrenamiento
+            <a href="@Url.Page("/Practica")" class="botonmenu btn-large col s4 offset-s1">
+                Practica
             </a>
         </div>
     </div>
