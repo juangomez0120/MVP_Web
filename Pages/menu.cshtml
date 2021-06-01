@@ -3,21 +3,22 @@
 @{
     ViewData["Title"] = "Log-In";
 }
-<div class="container">
-    <div class="botones1 row">
-        <a href="@Url.Page("/Examen")" class="botonmenu btn col s12 m5">
-            <p class="textobtn flow-text">EXAMEN</p>
-        </a>
-        <a class="botonmenu btn col s12 m5 offset-m2">
-            <p class="textobtn flow-text">ENTRENAMIENTO</p>
-        </a>
+
+<div class="row">
+    <div class="imagenesLanding col l5">
+        <img id="imagenMenu" src="~/img/img_37012.jpg" />
     </div>
-    @*<div class="botones2 row">
-        <a class="botonmenu btn col s12 m5">
-            <p class="textobtn flow-text">HISTORIAL</p>
-        </a>
-        <a class="botonmenu btn col s12 m5 offset-m2">
-            <p class="textobtn flow-text">RANKING</p>
-        </a>
-    </div>*@
+    <div class="textoLanding col l5 offset-l2">
+        <h2>Bienvenido @Model.Nombre,</h2>
+        <div class="row"></div>
+        <h5 style="color: #666666">Aquí podrás entrenar para la labor que realizaras en las plantas de Ternium.</h5>
+        <div class="botones1 row">
+            <a href="@Url.Page("/Examen")" class="botonmenu btn-large col l4 offset-l1">
+                Examen
+            </a>
+            <a href="@Url.Page("/Entrenamiento")" class="botonmenu btn-large col l4 offset-l1">
+                Entrenamiento
+            </a>
+        </div>
+    </div>
 </div>

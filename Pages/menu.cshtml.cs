@@ -11,9 +11,11 @@ namespace MVP_Web.Pages
 {
     public class Index1Model : PageModel
     {
+        public string Nombre { get; set; }
         public void OnGet()
         {
-            string usernameUsuario = HttpContext.Session.GetString("SessionUsuario");
+            Nombre = HttpContext.Session.GetString("SessionNombre");
         }
+
     }
 }
