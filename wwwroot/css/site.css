@@ -1,4 +1,4 @@
-﻿body {
+body {
     background-color: white;
 
     /* Margin bottom by footer height */
@@ -307,4 +307,11 @@ td {
 
 .textoLanding h6{
     color: #666666;
+}
+
+/*Juego de Unity*/
+.juegoUnity {
+    width: 100%;
+    height: 800px;
+    border-radius: 25px;
 }
