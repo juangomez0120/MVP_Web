@@ -17,22 +17,28 @@
 
 </head>
 <body>
-    <header>   
+    <header>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="@Url.Page("/Perfil")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif;">Perfil</a></li>
             <li class="divider"></li>
             <li><a href="@Url.Page("/Index")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif;">Terminar Sesión</a></li>
         </ul>
-        <script>$(document).ready(function () {
+        <script>
+            $(document).ready(function () {
                 $('.dropdown-trigger').dropdown();
-            });</script>
+            });
+
+            $(document).ready(function () {
+                $('.sidenav').sidenav();
+            });
+        </script>
 
         <!-- NavBar -->
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper white">
-                    <img src="img/logoTernium.png" class="logo" />
+                    <img src="img/logoTernium.png" class="logo hide-on-med-and-down" />
                     <a href="@Url.Page("/menu")" class="center brand-logo red-text" style="font-family: 'Oswald', sans-serif;">El Gran Escape</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
                         <li><a href="@Url.Page("/menu")" class="greyDark" style="font-family: 'Oswald', sans-serif;">Menú</a></li>
@@ -43,9 +49,20 @@
                     <li><a href="" class="btn btn-floating red white-text dropdown-trigger" data-target="dropdown1"></a></li>
                         -->
                     </ul>
+                    <a href="#" data-target="slide-out" class="sidenav-trigger hide-on-med-and-up"><i class="material-icons blue-grey-text text-darken-2" style="font-size: 32px">menu</i></a>
                 </div>
             </nav>
         </div>
+
+        <!-- Side Nav para Mobil -->
+        <ul id="slide-out" class="sidenav">
+            <li><a href="@Url.Page("/menu")" class="top blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif; font-size: 18px;">Menú</a></li>
+            <li><a href="@Url.Page("/EntrenamientoLeaderboard")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif; font-size: 18px;">Ranking</a></li>
+            <li><a href="@Url.Page("/Perfil")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif; font-size: 18px;">Perfil</a></li>
+            <li class="divider"></li>
+            <li><a href="@Url.Page("/Index")" class="blue-grey-text text-darken-2" style="font-family: 'Oswald', sans-serif; font-size: 18px;">Terminar Sesión</a></li>
+        </ul>
+        
     </header>
 
     <!-- Primera página que ve el usuario cuando se mete es la del leaderboard -->
