@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using MySql.Data.MySqlClient;
 using MVP_Web.Model;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
+using System.Text;
 
 namespace Sprint3.Pages
 {
@@ -16,14 +19,51 @@ namespace Sprint3.Pages
         public string NombreUsuario { get; set; }
         public string ApellidoUsuario { get; set; }
         public IList<Entrenamiento> ListaEntrenamiento { get; set; }
+        public Dictionary<string, Dictionary<string, Dictionary<string, int[]>>> ListaExamenes { get; set; }
+        public bool Estatus { get; set; }
 
-        public void OnGet()
+        public void OnGet() // async Task<IActionResult> OnGet()
         {
             // Variables de sesión
-            NombreUsuario = HttpContext.Session.GetString("SessionNombre");
-            ApellidoUsuario = HttpContext.Session.GetString("SessionApellido");
             string UsernameUsuario = HttpContext.Session.GetString("SessionUsername");
 
+            /* API
+            if (ListaExamenes == null)
+            {
+                Estatus = false;
+
+                string respuesta = "[]";
+
+                string jsonString = HttpContext.Session.GetString("SessionKey");
+
+                Key llave = JsonConvert.DeserializeObject<Key>(jsonString);
+
+                Uri baseUrl = new Uri("https://chatarrap-api.herokuapp.com/users/getScores/605285198d2862d0df655e3d"); //getScores/{llave.user}
+
+                HttpClient client = new HttpClient();
+
+                client.DefaultRequestHeaders.Add("auth_key", llave.token);
+
+                HttpResponseMessage response = await client.GetAsync(baseUrl.ToString());
+
+                if (response.IsSuccessStatusCode)
+                {
+                    respuesta = await response.Content.ReadAsStringAsync();
+                    ListaExamenes = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, int[]>>>>(respuesta);
+                    Estatus = true;
+                }
+            }
+            else
+            {
+                Estatus = true;
+            }*/
+
+            historialEntrenamiento(UsernameUsuario);
+
+            // return Page();
+        }
+
+        public void historialEntrenamiento(string UsernameUsuario) {
             ListaEntrenamiento = new List<Entrenamiento>();
 
             //Base de Datos
