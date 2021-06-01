@@ -14,7 +14,8 @@ namespace MVP_Web.Pages
         public string Nombre { get; set; }
         public void OnGet()
         {
-            Nombre = HttpContext.Session.GetString("SessionNombre"); 
+            Nombre = HttpContext.Session.GetString("SessionNombre");
         }
+
     }
 }
