@@ -22,66 +22,32 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Examen1</td>
-                                <td>80</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Examen1</td>
-                                <td>70</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Examen1</td>
-                                <td>83</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Examen1</td>
-                                <td>85</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Examen1</td>
-                                <td>89</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>Examen1</td>
-                                <td>94</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>7</td>
-                                <td>Examen1</td>
-                                <td>90</td>
-                                <td>Abril2021</td>
-                            </tr>
-                            <tr>
-                                <td>8</td>
-                                <td>Examen1</td>
-                                <td>100</td>
-                                <td>Mayo2021</td>
-                            </tr>
-                            <tr>
-                                <td>9</td>
-                                <td>Examen1</td>
-                                <td>95</td>
-                                <td>Mayo2021</td>
-                            </tr>
-                            <tr>
-                                <td>10</td>
-                                <td>Examen1</td>
-                                <td>100</td>
-                                <td>Mayo2021</td>
-                            </tr>
+                            @if(Model.Estatus == true) {
+                                @foreach (var item in Model.ListaExamenes)
+                                {
+                                    <tr>
+                                        <!-- Número -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.num)
+                                        </td>
+
+                                        <!-- Puntaje -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.examen)
+                                        </td>
+
+                                        <!-- Racha -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.score)
+                                        </td>
+
+                                        <!-- Fecha -->
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.mes)
+                                        </td>
+                                    </tr>
+                                }
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -105,27 +71,27 @@
                                 <tbody>
                                     @foreach (var item in Model.ListaEntrenamiento)
                                     {
-                                    <tr>
-                                        <!-- Número -->
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.numero)
-                                        </td>
+                                        <tr>
+                                            <!-- Número -->
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.numero)
+                                            </td>
 
-                                        <!-- Puntaje -->
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.puntaje)
-                                        </td>
+                                            <!-- Puntaje -->
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.puntaje)
+                                            </td>
 
-                                        <!-- Racha -->
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.racha)
-                                        </td>
+                                            <!-- Racha -->
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.racha)
+                                            </td>
 
-                                        <!-- Fecha -->
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.fecha)
-                                        </td>
-                                    </tr>
+                                            <!-- Fecha -->
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.fecha)
+                                            </td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>
