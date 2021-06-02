@@ -19,16 +19,16 @@ namespace Sprint3.Pages
         public string NombreUsuario { get; set; }
         public string ApellidoUsuario { get; set; }
         public IList<Entrenamiento> ListaEntrenamiento { get; set; }
-        // public Dictionary<string, Dictionary<string, Dictionary<string, int[]>>> ListaExamenes { get; set; }
+        public IList<Examen> ListaExamenes { get; set; }
         public List<List<string>> ListaMedallas { get; set; }
         public bool Estatus { get; set; }
 
-        public void OnGet() // async Task<IActionResult> OnGet()
+        public async Task<IActionResult> OnGet() // void onGet()
         {
             // Variables de sesión
             string UsernameUsuario = HttpContext.Session.GetString("SessionUsername");
 
-            /* API
+            // API
             if (ListaExamenes == null)
             {
                 Estatus = false;
@@ -50,19 +50,37 @@ namespace Sprint3.Pages
                 if (response.IsSuccessStatusCode)
                 {
                     respuesta = await response.Content.ReadAsStringAsync();
-                    ListaExamenes = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, int[]>>>>(respuesta);
+
+                    dynamic obj = JsonConvert.DeserializeObject<dynamic>(respuesta);
+                    Dictionary<string, Dictionary<string, Dictionary<string, List<int>>>> diccionarioExamenes = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Dictionary<string, List<int>>>>>(obj);
+
+                    ListaExamenes = new List<Examen>();
+                    int num = 0;
+
+                    foreach(KeyValuePair<string, Dictionary<string, Dictionary<string, List<int>>>> mesRaw in diccionarioExamenes)
+                    {
+                        foreach(KeyValuePair<string, Dictionary<string, List<int>>> tipo in diccionarioExamenes[mesRaw.Key])
+                        {
+                            foreach(KeyValuePair<string, List<int>> categoria in diccionarioExamenes[mesRaw.Key][tipo.Key])
+                            {
+                                ListaExamenes.Add(new Examen(++num, mesRaw.Key, tipo.Key + " - " + categoria.Key, (double)categoria.Value[0] / categoria.Value[1] * 100));
+
+                            }
+                        }
+                    }
+
                     Estatus = true;
                 }
             }
             else
             {
                 Estatus = true;
-            }*/
+            }
 
             historialEntrenamiento(UsernameUsuario);
             medallas(UsernameUsuario);
 
-            // return Page();
+             return Page();
         }
 
         public void historialEntrenamiento(string UsernameUsuario) {
