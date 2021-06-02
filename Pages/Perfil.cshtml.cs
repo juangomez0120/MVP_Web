@@ -39,7 +39,11 @@ namespace Sprint3.Pages
 
                 Key llave = JsonConvert.DeserializeObject<Key>(jsonString);
 
-                Uri baseUrl = new Uri("https://chatarrap-api.herokuapp.com/users/getScores/605285198d2862d0df655e3d"); //getScores/{llave.user}
+                // llave.user = "605285198d2862d0df655e3d"; EJEMPLO
+
+                string rawUrl = "https://chatarrap-api.herokuapp.com/users/getScores/" + llave.user;
+
+                Uri baseUrl = new Uri(rawUrl);
 
                 HttpClient client = new HttpClient();
 
