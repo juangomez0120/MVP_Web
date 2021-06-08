@@ -3,12 +3,50 @@
 @{
     ViewData["Title"] = "Practica";
 }
+
+<script>
+    
+    var cors_api_url = 'https://cryptic-headland-94862.herokuapp.com/https://chatarrap-api.herokuapp.com/';
+    function doCORSRequest(options, printResult) {
+        var x = new XMLHttpRequest();
+        x.open(options.method, cors_api_url + options.url);
+        x.onload = x.onerror = function () {
+            printResult(
+                options.method + ' ' + options.url + '\n' +
+                x.status + ' ' + x.statusText + '\n\n' +
+                (x.responseText || '')
+            );
+        };
+        if (/^POST/i.test(options.method)) {
+            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        }
+        x.send(options.data);
+    }
+
+    // Bind event
+    (function () {
+        var urlField = document.getElementById('url');
+        var dataField = document.getElementById('data');
+        var outputField = document.getElementById('output');
+        document.getElementById('get').onclick =
+            document.getElementById('post').onclick = function (e) {
+                e.preventDefault();
+                doCORSRequest({
+                    method: this.id === 'post' ? 'POST' : 'GET',
+                    url: urlField.value,
+                    data: dataField.value
+                }, function printResult(result) {
+                    outputField.value = result;
+                });
+            };
+    })();
+</script>
 <style>
     html,
     body {
-        background: #000;
-        width: 100%;
-        height: 100%;
+        background: white;
+        width: 960px;
+        height: 600px;
         overflow: visible;
         padding: 0;
         margin: 0;
@@ -19,34 +57,35 @@
         position: absolute;
     }
 
-    div#gameContainer canvas {
-        position: absolute;
-    }
+        div#gameContainer canvas {
+            position: absolute;
+            margin-top:16px;
+        }
 
-    div#gameContainer canvas[data-pixel-art="true"] {
-        position: absolute;
-        image-rendering: optimizeSpeed;
-        image-rendering: -webkit-crisp-edges;
-        image-rendering: -moz-crisp-edges;
-        image-rendering: -o-crisp-edges;
-        image-rendering: crisp-edges;
-        image-rendering: -webkit-optimize-contrast;
-        image-rendering: optimize-contrast;
-        image-rendering: pixelated;
-        -ms-interpolation-mode: nearest-neighbor;
-    }
+            div#gameContainer canvas[data-pixel-art="true"] {
+                position: absolute;
+                image-rendering: optimizeSpeed;
+                image-rendering: -webkit-crisp-edges;
+                image-rendering: -moz-crisp-edges;
+                image-rendering: -o-crisp-edges;
+                image-rendering: crisp-edges;
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: optimize-contrast;
+                image-rendering: pixelated;
+                -ms-interpolation-mode: nearest-neighbor;
+            }
 </style>
 
 <div id="gameContainer">
-    <canvas id="unity-canvas" data-pixel-art=""></canvas>
-    <script src="~/Build/WebGLBuild.loader.js"></script>
+    <canvas id="unity-canvas" data-pixel-art="true"></canvas>
+    <script src="Build/GranEscapeWebGLFinal.loader.js"></script>
     <script>createUnityInstance(document.querySelector("#unity-canvas"), {
-            dataUrl: "/Build/WebGLBuild.data",
-            frameworkUrl: "/Build/WebGLBuild.framework.js",
-            codeUrl: "/Build/WebGLBuild.wasm",
+            dataUrl: "Build/GranEscapeWebGLFinal.data",
+            frameworkUrl: "Build/GranEscapeWebGLFinal.framework.js",
+            codeUrl: "Build/GranEscapeWebGLFinal.wasm",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "DefaultCompany",
-            productName: "Animation",
+            productName: "El_Gran_Escape",
             productVersion: "1.0",
         }).then(function (instance) {
             var canvas = instance.Module.canvas;
@@ -55,7 +94,10 @@
                 var w;
                 var h;
 
-                if (scaleToFit) {
+                w = 960;
+                h = 600;
+
+                @*if (scaleToFit) {
                     w = window.innerWidth;
                     h = window.innerHeight;
 
@@ -68,7 +110,7 @@
                 } else {
                     w = 960;
                     h = 600;
-                }
+                }*@
 
                 container.style.width = canvas.style.width = w + "px";
                 container.style.height = canvas.style.height = h + "px";
@@ -78,7 +120,7 @@
 
             var scaleToFit;
             try {
-                scaleToFit = !!JSON.parse("");
+                scaleToFit = !!JSON.parse("true");
             } catch (e) {
                 scaleToFit = true;
             }
@@ -86,3 +128,4 @@
             onResize();
         });</script>
 </div>
+
