@@ -208,6 +208,7 @@ input {
     background-color: rgb(255, 51, 0);
     color: white;
     border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
 }
 
     .botonmenu:hover {
@@ -231,6 +232,7 @@ input {
     margin-right: auto;
     display: block;
     width: 30%;
+    font-family: 'Oswald', sans-serif;
 }
 
     #botonlogin:hover {
