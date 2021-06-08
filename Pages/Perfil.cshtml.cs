@@ -26,6 +26,8 @@ namespace Sprint3.Pages
         {
             // Variables de sesión
             string UsernameUsuario = HttpContext.Session.GetString("SessionUsername");
+            UsernameUsuario = "ternium1234"; // EJEMPLO Usuario: ternium1234
+
             int totalExamenes = 0, totalInmunidad = 0, scoresPosicion = -1, scoresPastPosicion = -1;
 
             if (UsernameUsuario == null || UsernameUsuario == "")
@@ -95,10 +97,10 @@ namespace Sprint3.Pages
                         listaIntentos.Add(intento);
                     }
 
-                    List<Attempt> listaUsuarioIntentos = listaIntentos.Where(x => x.username == "ternium1234").ToList(); // EJEMPLO
+                    List<Attempt> listaUsuarioIntentos = listaIntentos.Where(x => x.username == UsernameUsuario).ToList();
                     totalExamenes = listaUsuarioIntentos.Count();
 
-                    List<Attempt> listaUsuarioPerfecto = listaIntentos.Where(x => x.username == "ternium1234" && x.attempt == 1 && x.score == 100).ToList(); // EJEMPLO
+                    List<Attempt> listaUsuarioPerfecto = listaIntentos.Where(x => x.username == UsernameUsuario && x.attempt == 1 && x.score == 100).ToList();
                     totalInmunidad = listaUsuarioPerfecto.Count();
                 }
 
@@ -108,7 +110,7 @@ namespace Sprint3.Pages
                     List<LeaderboardExamen> listaScores = JsonConvert.DeserializeObject<List<LeaderboardExamen>>(respuestaScores);
                     listaScores.OrderByDescending(x => x.score);
 
-                    scoresPosicion = listaScores.FindIndex(x => x.username == "ternium1234"); // EJEMPLO
+                    scoresPosicion = listaScores.FindIndex(x => x.username == UsernameUsuario);
                 }
 
                 if (responseScoresPast.IsSuccessStatusCode)
@@ -117,7 +119,7 @@ namespace Sprint3.Pages
                     List<LeaderboardExamen> listaScoresPast = JsonConvert.DeserializeObject<List<LeaderboardExamen>>(respuestaScoresPast);
                     listaScoresPast.OrderByDescending(x => x.score);
 
-                    scoresPastPosicion = listaScoresPast.FindIndex(x => x.username == "ternium1234"); // EJEMPLO
+                    scoresPastPosicion = listaScoresPast.FindIndex(x => x.username == UsernameUsuario);
                 }
 
             }

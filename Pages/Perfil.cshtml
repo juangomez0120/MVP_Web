@@ -111,9 +111,9 @@
                         <div class="col 12">
                             @if (Model.ListaMedallas[0] != null)
                             {
-                                @foreach (var item in Model.ListaMedallas[0])
+                                @foreach (string item in Model.ListaMedallas[0])
                                 {
-                                    <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                    <img src="img/medalla_oro.png" class="imagenMedalla tooltipped" data-position="top" data-tooltip="@item" />
                                 }
                             }
                         </div>
@@ -130,7 +130,7 @@
                             {
                                 @foreach (var item in Model.ListaMedallas[1])
                                 {
-                                    <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                    <img src="img/medalla_oro.png" class="imagenMedalla tooltipped" data-position="top" data-tooltip="@item" />
                                 }
                             }
                         </div>
@@ -147,7 +147,7 @@
                             {
                                 @foreach (var item in Model.ListaMedallas[2])
                                 {
-                                    <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                    <img src="img/medalla_oro.png" class="imagenMedalla tooltipped" data-position="top" data-tooltip="@item" />
                                 }
                             }
                         </div>
