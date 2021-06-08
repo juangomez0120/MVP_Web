@@ -398,3 +398,11 @@ td {
         width: 200px;
     }
 }
+
+@media screen and (max-width: 600px){
+    .botonindicadores{
+        margin-left: auto;
+        margin-right:auto;
+        display: block;
+    }
+}
