@@ -11,16 +11,4 @@
   <ItemGroup>
     <Folder Include="wwwroot\Build\" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Remove="wwwroot\Build\WebGLBuild.data" />
-    <Content Remove="wwwroot\Build\WebGLBuild.framework.js" />
-    <Content Remove="wwwroot\Build\WebGLBuild.loader.js" />
-    <Content Remove="wwwroot\Build\WebGLBuild.wasm" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="wwwroot\Build\WebGLBuild.data" />
-    <None Include="wwwroot\Build\WebGLBuild.framework.js" />
-    <None Include="wwwroot\Build\WebGLBuild.loader.js" />
-    <None Include="wwwroot\Build\WebGLBuild.wasm" />
-  </ItemGroup>
 </Project>
