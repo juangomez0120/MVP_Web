@@ -16,23 +16,42 @@ namespace MVP_Web.Pages
         public string NombreUsuario { get; set; }
         [BindProperty]
         public string ApellidoUsuario { get; set; }
+        public string MensajeError { get; set; }
 
         //Agarrar primera letra de NombreUsuario y ApellidoUsuario y mandarlas a pagina de Layout
 
         //Mandar NombreUsuario y ApellidoUsuario a página de perfil
 
-        private static string PrimeraLetraMayuscula(string str) { // REVISAR (nombres/apellidos con más de 1 palabra)
+        private static string PrimeraLetraMayuscula(string str) {
             return char.ToUpper(str[0]) + str[1..];
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            MensajeError = "";
 
+            if(HttpContext.Session.GetString("SessionUsername") == null || HttpContext.Session.GetString("SessionUsername") == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
+            return Page();
         }
 
         public IActionResult OnPost()
         {
             string usernameUsuario = HttpContext.Session.GetString("SessionUsername");
+
+            if(usernameUsuario == null || usernameUsuario == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
+            if (NombreUsuario == null || ApellidoUsuario == null)
+            {
+                MensajeError = "Credenciales Inválidas";
+                return Page();
+            }
 
             string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
             MySqlConnection conexion = new MySqlConnection(connectionString);

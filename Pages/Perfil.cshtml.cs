@@ -28,6 +28,11 @@ namespace Sprint3.Pages
             string UsernameUsuario = HttpContext.Session.GetString("SessionUsername");
             int totalExamenes = 0, totalInmunidad = 0, scoresPosicion = -1, scoresPastPosicion = -1;
 
+            if (UsernameUsuario == null || UsernameUsuario == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
             // API
             if (ListaExamenes == null)
             {
