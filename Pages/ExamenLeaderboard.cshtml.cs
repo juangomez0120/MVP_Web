@@ -17,14 +17,11 @@ namespace Sprint3.Pages
     public class ExamenLeaderboardModel : PageModel
     {
         public List<LeaderboardExamen> ListaExamenes { get; set; }
-        public bool Estatus { get; set; }
 
         public async Task<IActionResult> OnGet()
         {
             if (ListaExamenes == null)
             {
-                Estatus = false;
-
                 string respuesta = "[]";
 
                 string jsonString = HttpContext.Session.GetString("SessionKey");
@@ -43,12 +40,8 @@ namespace Sprint3.Pages
                 {
                     respuesta = await response.Content.ReadAsStringAsync();
                     ListaExamenes = JsonConvert.DeserializeObject<List<LeaderboardExamen>>(respuesta);
-                    Estatus = true;
+                    ListaExamenes.OrderByDescending(x => x.score);
                 }
-            }
-            else
-            {
-                Estatus = true;
             }
 
             return Page();

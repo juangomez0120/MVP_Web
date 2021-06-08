@@ -36,14 +36,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.Estatus == true)
+                    @if (Model.ListaExamenes != null)
                     {
                         @for (var i = 1; i <= Model.ListaExamenes.Count; i++)
                         {
                             <tr>
                                 <!-- Lugar -->
                                 <td>
-                                    @i
+                                    @if (i == 1)
+                                    {
+                                        <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                    }
+                                    else if (i == 2)
+                                    {
+                                        <img src="img/medalla_plata.png" class="imagenMedalla" />
+                                    }
+                                    else if (i == 3)
+                                    {
+                                        <img src="img/medalla_bronze.png" class="imagenMedalla" />
+                                    }
+                                    else
+                                        @i
                                 </td>
 
                                 <!-- Nombre -->

@@ -7,8 +7,6 @@
 <div class="" style="font-family: 'Oswald', sans-serif;">
     <div class="row">
         <div class="col s12 m8">
-            @*Examenes*@
-            @*Titulo*@
             <h4 class="center-align greyForRanking">Historial de Examenes</h4>
             <div class="row">
                 <div class="col s12">
@@ -22,7 +20,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if(Model.Estatus == true) {
+                            @if (Model.ListaExamenes != null)
+                            {
                                 @foreach (var item in Model.ListaExamenes)
                                 {
                                     <tr>
@@ -52,10 +51,9 @@
                     </table>
                 </div>
             </div>
-            @*Entrenamientos*@
+
             <div class="row">
                 <div class="col s12">
-                    @*Titulo*@
                     <h4 class="center-align greyForRanking">Historial de Entrenamientos</h4>
                     <div class="row">
                         <div class="col 12">
@@ -69,31 +67,34 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach (var item in Model.ListaEntrenamiento)
+                                    @if (Model.ListaEntrenamiento != null)
                                     {
-                                        <tr>
-                                            <!-- Número -->
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.numero)
-                                            </td>
+                                        @foreach (var item in Model.ListaEntrenamiento)
+                                        {
+                                            <tr>
+                                                <!-- Número -->
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.numero)
+                                                </td>
 
-                                            <!-- Puntaje -->
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.puntaje)
-                                            </td>
+                                                <!-- Puntaje -->
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.puntaje)
+                                                </td>
 
-                                            <!-- Racha -->
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.racha)
-                                            </td>
+                                                <!-- Racha -->
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.racha)
+                                                </td>
 
-                                            <!-- Fecha -->
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.fecha)
-                                            </td>
-                                        </tr>
+                                                <!-- Fecha -->
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.fecha)
+                                                </td>
+                                            </tr>
+                                        }
                                     }
-                                </tbody>
+                                    </tbody>
                             </table>
                         </div>
                     </div>
@@ -101,46 +102,53 @@
             </div>
         </div>
         <div class="col s12 m3 offset-m1">
-            @*Titulo*@
             <h4 class="center-align greyForRanking">Medallas</h4>
 
-            @*Subcategoría de Medallas 2*@
             <div class="row">
                 <div class="col s12">
                     <h6 class="greyDark">Categoría Exámenes</h6>
                     <div class="row">
                         <div class="col 12">
-                            @foreach (var item in Model.ListaMedallas[0])
+                            @if (Model.ListaMedallas[0] != null)
                             {
-                                <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                @foreach (var item in Model.ListaMedallas[0])
+                                {
+                                    <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                }
                             }
                         </div>
                     </div>
                 </div>
             </div>
-            @*Subcategoría de Medallas 2*@
+
             <div class="row">
                 <div class="col s12">
                     <h6 class="greyDark">Categoría Inmunidad</h6>
                     <div class="row">
                         <div class="col 12">
-                            @foreach (var item in Model.ListaMedallas[1])
+                            @if (Model.ListaMedallas[1] != null)
                             {
-                                <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                @foreach (var item in Model.ListaMedallas[1])
+                                {
+                                    <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                }
                             }
                         </div>
                     </div>
                 </div>
             </div>
-            @*Subcategoría de Medallas 3*@
+    
             <div class="row">
                 <div class="col s12">
                     <h6 class="greyDark">Categoría Ranking</h6>
                     <div class="row">
                         <div class="col 12">
-                            @foreach (var item in Model.ListaMedallas[2])
+                            @if (Model.ListaMedallas[2] != null)
                             {
-                                <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                @foreach (var item in Model.ListaMedallas[2])
+                                {
+                                    <img src="img/medalla_oro.png" class="imagenMedalla" />
+                                }
                             }
                         </div>
                     </div>
