@@ -30,7 +30,7 @@ namespace Sprint3.Pages
 
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexion;
-            cmd.CommandText = "SELECT Usuario.Nombre, Usuario.Apellido, SUM(Entrenamiento.Puntaje) AS PuntajeTotal FROM Usuario INNER JOIN Entrenamiento ON Usuario.Id = Entrenamiento.Usuario_Id GROUP BY Usuario.Id ORDER BY PuntajeTotal DESC LIMIT 10;";
+            cmd.CommandText = "call obtenerEntrenamientos();";
 
             LeaderboardEntrenamiento en1 = new LeaderboardEntrenamiento();
             ListaEntrenamiento = new List<LeaderboardEntrenamiento>();

@@ -11,21 +11,26 @@
         <!-- Escoger Opción: Leaderboard de Examen o Entrenamiento o Indicadores-->
         <div class="centered row top" style="font-family: 'Oswald', sans-serif; font-size: 24px;">
 
-            <div class="col s5">
+            <div class="col s3">
                 <a href="@Url.Page("/EntrenamientoLeaderboard")" class="greyForRanking">Entrenamiento</a>
             </div>
 
-            <div class="col s3">
+            <div class="col s3 offset-s2">
                 <a href="@Url.Page("/ExamenLeaderboard")" class="red1">Examen</a>
             </div>
 
-            <div class="col s4">
+            <div class="col s3 offset-s1">
                 <a href="@Url.Page("/IndicadoresLeaderboard")" class="greyForRanking">Indicadores</a>
             </div>
 
         </div>
 
-            
+        <div class="row"></div>
+
+        <div class="head-indicadores">
+            <h5 class="center-align greyDark">Top 10 de mejores resultados en examenen</h5>
+        </div>
+
         <div class="top">
             <table class="centered greyDark">
                 <thead>
@@ -61,12 +66,12 @@
 
                                 <!-- Nombre -->
                                 <td>
-                                    @Html.DisplayFor(modelItem => Model.ListaExamenes[i-1].username)
+                                    @Html.DisplayFor(modelItem => Model.ListaExamenes[i - 1].username)
                                 </td>
 
                                 <!-- Score -->
                                 <td>
-                                    @Html.DisplayFor(modelItem => Model.ListaExamenes[i-1].score)
+                                    @Html.DisplayFor(modelItem => Model.ListaExamenes[i - 1].score)
                                 </td>
                             </tr>
                         }
@@ -74,6 +79,6 @@
                 </tbody>
             </table>
         </div>
-        
+
     </div>
 </div>
