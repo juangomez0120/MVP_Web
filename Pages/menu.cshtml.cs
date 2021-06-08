@@ -12,9 +12,16 @@ namespace MVP_Web.Pages
     public class Index1Model : PageModel
     {
         public string Nombre { get; set; }
-        public void OnGet()
+        public IActionResult OnGet()
         {
             Nombre = HttpContext.Session.GetString("SessionNombre");
+
+            if (Nombre == null || Nombre == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
+            return Page();
         }
 
     }

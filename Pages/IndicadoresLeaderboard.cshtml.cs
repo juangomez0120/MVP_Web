@@ -6,14 +6,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 using MVP_Web.Model;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Sprint3.Pages
 {
     public class IndicadoresLeaderboardModel : PageModel
     {
         public IList<Indicadores> ListaIndicadores { get; set; }
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (HttpContext.Session.GetString("SessionUsername") == null || HttpContext.Session.GetString("SessionUsername") == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
             ListaIndicadores = new List<Indicadores>();
             string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
             MySqlConnection conexion = new MySqlConnection(connectionString);
@@ -40,6 +47,8 @@ namespace Sprint3.Pages
                 }
             }
             conexion.Dispose();
+
+            return Page();
         }
     }
 }

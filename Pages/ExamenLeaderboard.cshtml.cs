@@ -20,6 +20,11 @@ namespace Sprint3.Pages
 
         public async Task<IActionResult> OnGet()
         {
+            if (HttpContext.Session.GetString("SessionUsername") == null || HttpContext.Session.GetString("SessionUsername") == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
             if (ListaExamenes == null)
             {
                 string respuesta = "[]";

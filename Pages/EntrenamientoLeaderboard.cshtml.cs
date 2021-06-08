@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySql.Data.MySqlClient;
 using MVP_Web.Model;
+using Microsoft.AspNetCore.Http;
 
 namespace Sprint3.Pages
 {
@@ -13,8 +14,13 @@ namespace Sprint3.Pages
     {
         public IList<LeaderboardEntrenamiento> ListaEntrenamiento { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (HttpContext.Session.GetString("SessionUsername") == null || HttpContext.Session.GetString("SessionUsername") == "")
+            {
+                return RedirectToPage("ExpiracionSesion");
+            }
+
             ListaEntrenamiento = new List<LeaderboardEntrenamiento>();
 
             //Base de Datos
@@ -59,6 +65,8 @@ namespace Sprint3.Pages
             }
 
             conexion.Dispose();
+
+            return Page();
         }
     }
 }
