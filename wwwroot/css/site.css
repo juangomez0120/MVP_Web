@@ -31,6 +31,7 @@ body {
 #logoTerniumLogin{
     margin-top: 8%;
     margin-left: 8%;
+    width: 190px;
 }
 
 /* Table Sizing */
@@ -99,29 +100,37 @@ input {
     color: black;
 }
 
-input[type=text]:not(.browser-default) {
-    border-bottom: 1px solid #d4d4d4;
+.input-field input[type=text]:not(.browser-default) {
     background-color: #d4d4d4;
     border-bottom: 2px solid #666666;
     border-right: 2px solid #666666;
     border-left: 2px solid #666666;
     border-top: 2px solid #666666;
-    padding: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     color: #666666;
 }
 
-::placeholder{
+.input-examen input[type=text]:not(.browser-default) {
+    border-bottom: 2px solid #666666;
     color: #666666;
 }
 
-input[type=password]:not(.browser-default) {
+::placeholder {
+    color: #666666;
+}
+
+.input-field input[type=password]:not(.browser-default) {
     border-bottom: 2px solid #666666;
     border-right: 2px solid #666666;
     border-left: 2px solid #666666;
     border-top: 2px solid #666666;
     color: #666666;
     background-color: #d4d4d4;
-    padding: 5%;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .row .input-field input[type=text]:focus + label {
@@ -152,12 +161,24 @@ input[type=password]:not(.browser-default) {
     box-shadow: 0 1px 0 0 #d4d4d4;
 }
 
+.row .input-examen input[type=text]:focus {
+    border-bottom: 2px solid rgb(255, 51, 0);
+    box-shadow: 0 1px 0 0 #d4d4d4;
+}
+
 .input-field .prefix.active {
     color: #d4d4d4;
 }
 
 .input-field .prefix {
     color: #d4d4d4;
+}
+
+.inputs{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
 }
 
 /* Password margin modificators */
@@ -189,11 +210,11 @@ input[type=password]:not(.browser-default) {
     border-radius: 10px;
 }
 
-.botonmenu:hover {
-    border: 1px solid rgb(255, 51, 0);
-    background-color: white;
-    color: #666666;
-}
+    .botonmenu:hover {
+        border: 1px solid rgb(255, 51, 0);
+        background-color: #D6D6D6;
+        color: rgb(255, 51, 0);
+    }
 
 .textobtn {
     margin-bottom: 8%;
@@ -201,18 +222,22 @@ input[type=password]:not(.browser-default) {
 }
 
 #botonlogin {
-    margin-top: 20%;
+    margin-top: 15%;
     margin-bottom: 40px;
     background-color: rgb(255, 51, 0);
     color: white;
     font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 30%;
 }
 
-#botonlogin:hover {
-    background-color: rgb(255, 51, 0, 0);
-    border: 1px solid rgb(255, 51, 0);
-    color: #666666;
-}
+    #botonlogin:hover {
+        background-color: #d6d6d6;
+        border: 1px solid rgb(255, 51, 0);
+        color: rgb(255, 51, 0);
+    }
 
 #botonDatosUsuario {
     margin-bottom: 40px;
@@ -320,6 +345,7 @@ td {
 .botonmenu{
     font-size: 13px;
 }
+
 
 @media screen and (max-width: 1239px) {
     #imagenMenu{

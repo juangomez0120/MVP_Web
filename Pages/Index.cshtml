@@ -31,22 +31,22 @@
                     <form method="post">
                         <div class="contenido col s12 m5 l4">
                             <div class="row">
-                                <img id="logoTerniumLogin" src="~/img/logoTernium.png" class="col s8 m5 l5" />
+                                <img class="logo" src="~/img/logoTernium.png" class="col s8 m5 l5" />
                             </div>
                             <h2 class="texto center-align" style="font-family:font-family: 'Oswald', sans-serif;">El Gran Escape</h2>
                             <div class="row" style="margin-top: 5%; margin-bottom: 0">
-                                <div class="input-field col s6 offset-s3">
-                                    <input placeholder="Usuario" type="text" id="autocomplete-input1" class="validate" asp-for="UsernameUsuario">
+                                <div class="inputs input-field">
+                                    <input placeholder="Usuario" type="text" id="autocomplete-input1" class="prueba1 validate" asp-for="UsernameUsuario">
                                 </div>
                             </div>
                             <div id="passwordrow" class="row">
-                                <div id="passwordcoli" class="passwordcolc input-field col s6 offset-s3">
+                                <div id="passwordcoli" class="inputs passwordcolc input-field">
                                     <input placeholder="Contraseña" type="password" id="autocomplete-input2" class="validate" asp-for="PasswordUsuario">
                                 </div>
                             </div>
                             <p class="credencialesinvalidas">@Model.MensajeError</p>
                             <div class="row">
-                                <input type="submit" id="botonlogin" class="btn col s4 offset-s4" value="Iniciar Sesión">
+                                <input type="submit" id="botonlogin" class="btn" value="Iniciar Sesión">
                             </div>
                         </div>
                         <div class="col s8" >

@@ -11,18 +11,24 @@
         <!-- Escoger Opción: Leaderboard de Examen o Entrenamiento o Indicadores-->
         <div class="centered row top" style="font-family: 'Oswald', sans-serif; font-size: 24px;">
 
-            <div class="col s5">
+            <div class="col s3 offset">
                 <a href="@Url.Page("/EntrenamientoLeaderboard")" class="greyForRanking">Entrenamiento</a>
             </div>
 
-            <div class="col s3">
+            <div class="col s3 offset-s2">
                 <a href="@Url.Page("/ExamenLeaderboard")" class="greyForRanking">Examen</a>
             </div>
 
-            <div class="col s4">
+            <div class="col s3 offset-s1">
                 <a href="@Url.Page("/IndicadoresLeaderboard")" class="red1">Indicadores</a>
             </div>
 
+        </div>
+
+        <div class="row"></div>
+
+        <div class="head-indicadores">
+            <h5 class="center-align greyDark">Top 10 de imagenes con más fallas.</h5>
         </div>
 
         <div class="top">
