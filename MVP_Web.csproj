@@ -11,4 +11,7 @@
   <ItemGroup>
     <Folder Include="wwwroot\Build\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Build\GranEscapeWebGLFinal.data" />
+  </ItemGroup>
 </Project>
