@@ -16,6 +16,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
 
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
+
 </head>
 <body id="bodyLogin">
     <header>
@@ -29,7 +33,9 @@
                     <div class="row">
                         <img id="logoTerniumLogin" src="~/img/logoTernium.png" class="col s8 m5 l5" />
                     </div>
-                    <h2 class="texto center-align" style="font-family: 'Oswald' , sans-serif;">Datos de Perfil</h2>
+         
+                    <h2 class="texto center-align" style="font-family: 'Oswald', sans-serif;">Datos de Perfil</h2>
+
                     <div class="row" style="margin-top: 5%; margin-bottom: 0">
                         <div class="input-field col s6 offset-s3">
                             <input placeholder="Nombre" type="text" id="autocomplete-input1" class="validate" asp-for="NombreUsuario">
@@ -42,7 +48,7 @@
                     </div>
                     <p class="credencialesinvalidas">@Model.MensajeError</p>
                     <div class="row">
-                        <input type="submit" id="botonlogin" class="btn col s4 offset-s4" value="Iniciar Sesión">
+                        <input type="submit" id="botonlogin" class="btn" value="Iniciar Sesión">
                     </div>
                 </div>
                 <div class="col s8">
