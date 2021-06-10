@@ -18,10 +18,6 @@ namespace MVP_Web.Pages
         public string ApellidoUsuario { get; set; }
         public string MensajeError { get; set; }
 
-        //Agarrar primera letra de NombreUsuario y ApellidoUsuario y mandarlas a pagina de Layout
-
-        //Mandar NombreUsuario y ApellidoUsuario a página de perfil
-
         private static string PrimeraLetraMayuscula(string str) {
             return char.ToUpper(str[0]) + str[1..];
         }
