@@ -21,7 +21,6 @@ namespace Sprint3.Pages
                 return RedirectToPage("ExpiracionSesion");
             }
 
-            ListaIndicadores = new List<Indicadores>();
             string connectionString = "Server=127.0.0.1;Port=3306;Database=DB_Gran_Escape;Uid=root;password=root;";
             MySqlConnection conexion = new MySqlConnection(connectionString);
             conexion.Open();
@@ -30,9 +29,9 @@ namespace Sprint3.Pages
             cmd.Connection = conexion;
             cmd.CommandText = "select imagen.Nombre, categoriaimg.NombreCategoria, count(*) from usuario_imagen inner join imagen on usuario_imagen.Imagen_Id = imagen.Id inner join categoriaimg on imagen.CategoriaImg_Id = categoriaimg.Id group by Imagen_Id, Estatus having(count(*)> 1 and Estatus = 0) or Estatus = 0 order by count(*) desc limit 10;";
 
-            Indicadores en1 = new Indicadores();
             int pos = 1;
-
+            Indicadores en1 = new Indicadores();
+            ListaIndicadores = new List<Indicadores>();
             using (var reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
