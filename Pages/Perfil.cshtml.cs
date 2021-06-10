@@ -22,10 +22,11 @@ namespace Sprint3.Pages
         public IList<Examen> ListaExamenes { get; set; }
         public List<List<string>> ListaMedallas { get; set; }
 
-        public async Task<IActionResult> OnGet() // void onGet()
+        public async Task<IActionResult> OnGet()
         {
             // Variables de sesión
             string UsernameUsuario = HttpContext.Session.GetString("SessionUsername");
+            // LINEA 30: Hard-Code mientras se llena de datos el API
             UsernameUsuario = "ternium1234"; // EJEMPLO Usuario: ternium1234
 
             int totalExamenes = 0, totalInmunidad = 0, scoresPosicion = -1, scoresPastPosicion = -1;
@@ -45,6 +46,7 @@ namespace Sprint3.Pages
 
                 string keyJsonString = HttpContext.Session.GetString("SessionKey");
                 Key llave = JsonConvert.DeserializeObject<Key>(keyJsonString);
+                // LINEA 50: Hard-Code mientras se llena de datos el API
                 llave.user = "5feb85cabdbd4e00176e634c"; // EJEMPLO Usuario: ternium1234
 
                 string uriStringExamen = "https://chatarrap-api.herokuapp.com/users/getScores/" + llave.user;
